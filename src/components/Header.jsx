@@ -1,6 +1,20 @@
 // import Bitmap from '../static/Bitmap.svg';
 
 export default function Header() {
+
+    function MainPageHeader() {
+        return (
+            <div className="headerHeadline">
+                    <h3>NEW PRODUCT</h3>
+                    <h1>XX99 MARK II
+                    HEADPHONES</h1>
+                    <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                    <div className="headerButton">
+                        <a href="#!"><p className="mButton1">SEE PRODUCT</p></a>
+                    </div>
+            </div>
+            )
+        }
     
     return (
         <>  
@@ -28,9 +42,7 @@ export default function Header() {
                     </div>
                     <div className="headerDivider"></div>
                     <div className="headerTexts">
-                        <div className="headerHeadline">
-                            <h2>NEW PRODUCT</h2>
-                        </div>
+                        <MainPageHeader />
                     </div>
                 </div>
             </header>

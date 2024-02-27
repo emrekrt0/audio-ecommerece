@@ -21,9 +21,7 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
-#root {
-  background-color: black;
-}
+a {text-decoration: none; color: inherit;}
 header {
   width: 375px;
   height: 600px;
@@ -38,7 +36,6 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 32px;
   height: 58px;
 }
 .headerItems {
@@ -46,24 +43,96 @@ header {
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 24px;
+  margin: 32px 0px;
 }
 .headerDivider {
   border: 1px solid #FFFFFF;
   opacity: 10.4%;
   margin-bottom: 108px;
 }
-.headerHeadline {
+.headerTexts {
+  width: 328px;
+  margin-inline: auto;
+}
+.headerHeadline h3 {
   font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: 10px;
   text-align: center;
+  margin-inline: auto;
   color: #FFFFFF;
   opacity: 49.64%;
 }
+.headerHeadline h1 {
+  text-align: center;
+  margin-inline: auto;
+  font-family: Manrope;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 1.2857142686843872px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 16px;
+}
+.headerHeadline>p {
+  text-align: center;
+  margin-inline: auto;
+  font-family: Manrope;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: center;
+  opacity: 75%;
+  color: #FFFFFF;
+  margin-top: 24px;
+}
+.headerButton {
+  width: 160px;
+  height: 48px;
+  text-align: center;
+  margin-inline: auto;
+  margin-top: 28px;
+}
+.headerButton p {
+  font-size: 12px;
+}
+.selectionContent {
+  
+  display: grid;
+  justify-items: center;
+}
+.selectionHeadphone {
+  /* background-image: url('src/assets/productselection/Mask.svg');
+  background-repeat: no-repeat; */
+  width: 327px;
+  height: 165px;
 
-
+}
+.selectionSVG {
+  position: relative;
+  top: 92px;
+}
+.selectionImages {
+  display: grid;
+  justify-items: center;
+  position: relative;
+  top: -122px;
+}
+.selectionTexts {
+  position: relative;
+  bottom: 170px;
+}
+.selectionTexts h5 {
+text-align: center;
+}
+.ovalPlace {
+  position: relative;
+  bottom: 54px;
+}
 
 .posAbs {
   position: absolute;
@@ -72,4 +141,100 @@ header {
   right: 0;
   bottom: 0;
   margin-inline: auto;
+}
+
+.mH1 {
+  font-family: Manrope;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
+.mH2 {
+  font-family: Manrope;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 1.4285714626312256px;
+}
+.mH3 {
+  font-family: Manrope;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.1428571939468384px;
+}
+.mH4{
+  font-family: Manrope;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 2px;
+}
+.mH5 {
+  font-family: Manrope;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 33px;
+  letter-spacing: 1.7142857313156128px;
+}
+.mH6 {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 1.2857142686843872px;
+}
+.mOverline {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 10px;
+}
+.mSubTitle {
+  font-family: Manrope;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0.9285714030265808px;
+}
+.mBody {
+  font-family: Manrope;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+}
+
+.mButton1 {
+  font-family: Manrope;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px;
+  background-color: #D87D4A;
+  padding: 15px 0px;
+  color: #FFFFFF;
+}
+.mButton1:hover {
+  background-color: #FBAF85;
+}
+.selectionHeaders {
+  font-family: Manrope;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1.0714285373687744px;
+  text-align: center;
+  color: #000000;
+}
+
+
+.mt15 {
+  margin-top: 15px;
+
+}
+.tac {
+  text-align: center;
 }
