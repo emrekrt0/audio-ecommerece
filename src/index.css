@@ -100,12 +100,16 @@ header {
 .headerButton p {
   font-size: 12px;
 }
+.containerWrapper {
+  display: grid;
+  justify-content: center;
+}
 .selectionContent {
-  
   display: grid;
   justify-items: center;
+  gap: 68px;
 }
-.selectionHeadphone {
+.selectionProduct {
   /* background-image: url('src/assets/productselection/Mask.svg');
   background-repeat: no-repeat; */
   width: 327px;
@@ -124,7 +128,9 @@ header {
 }
 .selectionTexts {
   position: relative;
-  bottom: 170px;
+  bottom: 187px;
+  display: grid;
+  gap: 17px;
 }
 .selectionTexts h5 {
 text-align: center;
@@ -133,6 +139,77 @@ text-align: center;
   position: relative;
   bottom: 54px;
 }
+.bigProduct {
+  margin-top: 229px;
+}
+
+.bigSpeaker {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+.bigSpeakerText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: absolute;
+  height: 80px;
+  left: 7.03%;
+  right: 7.34%;
+  top: 294px;
+}
+.bigSpeakerText h5 {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  /* or 111% */
+  text-align: center;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.bigSpeakerText p {
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 25px;
+text-align: center;
+color: #FFFFFF;
+mix-blend-mode: normal;
+opacity: 0.75;
+}
+.bigSpeakerButton {
+position: absolute;
+width: 160px;
+bottom: 55px;
+}
+.bigSpeakerAbs {
+  position: absolute;
+  left: 23.69%;
+  right: 23.63%;
+  top: 9.17%;
+  bottom: 56.33%;
+}
+
+
+
+
+
+
+
+
+
+.button3 {
+  display: flex;
+  flex-direction: row;
+  gap: 13.32px;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .posAbs {
   position: absolute;
@@ -229,7 +306,21 @@ text-align: center;
   text-align: center;
   color: #000000;
 }
+.mButton3 {
+  font-family: Manrope;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: left;
+  opacity: 50%;
+  color: #000000;
+}
+.mButton3:hover {
+  opacity: 100%;
+  color: #D87D4A;
 
+}
 
 .mt15 {
   margin-top: 15px;
@@ -237,4 +328,8 @@ text-align: center;
 }
 .tac {
   text-align: center;
+}
+
+.bg-black {
+  background-color: #000000;
 }
