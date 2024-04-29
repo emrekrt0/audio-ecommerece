@@ -23,7 +23,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 a {text-decoration: none; color: inherit;}
 header {
-  width: 375px;
+  max-width: 375px;
   height: 600px;
 }
 .headerBackground {
@@ -141,6 +141,7 @@ text-align: center;
 }
 .bigProduct {
   margin-top: 229px;
+  margin-bottom: 24px;
 }
 
 .bigSpeaker {
@@ -193,11 +194,143 @@ bottom: 55px;
   top: 9.17%;
   bottom: 56.33%;
 }
+.smallCards {
+  position: relative;
+  height: 320px;
+  margin-bottom: 24px;
+}
+.smallCardsImg {
+  position: absolute;
+}
+.smallCardsTexts {
+  position: absolute;
+  top: 101px;
+  left: 24px;
+}
+.smallCardsButton {
+position: absolute;
+bottom: 101px;
+left: 25.5px;
+border: 1px solid #000000;
+padding: 15px 29.5px 15px 31.5px;
+}
 
+.smallCardsButton p {
+margin: 0;
+font-family: Manrope;
+font-size: 13px;
+font-weight: 700;
+line-height: 17.76px;
+letter-spacing: 1px;
+text-align: left;
 
+}
 
+.smallCardsM {
+  position: relative;
+  height: 424px;
+  display: grid;
+  gap: 24px;
+  margin-bottom: 120px;
+}
 
+.smallCardsTextsM {
+  height: 200px;
+  background-color: #F1F1F1;
+  border-radius: 10px;
+  position: relative;
+}
+.smallCardsTextsM .mH4 {
+  position: absolute;
+  top: 41px;
+  left: 24px;
+}
+.smallCardsButtonM {
+  position: absolute;
+  bottom: 41px;
+  left: 25.5px;
+  border: 1px solid #000000;
+  padding: 15px 29.5px 15px 31.5px;
+}
 
+.smallCardsButtonM p {
+  font-family: Manrope;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17.76px;
+  letter-spacing: 1px;
+  text-align: left;  
+}
+footer {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
+.ad {
+  margin-bottom: 120px;
+  display: grid;
+  justify-items: center;
+  width: 327px;
+}
+.adImg {
+  margin-bottom: 40px;
+}
+.adTextHeader {
+  margin-bottom: 32px;
+}
+.adTextHeader .mH4 {
+  text-transform: uppercase;
+}
+.footerMain {
+  width: 375px;
+  height: 654px;
+  background-color: #000000;
+  position: relative;
+  display: flex;
+  gap: 48px;
+  flex-direction: column;
+}
+.footerInside {
+  width: 327px;
+  display: grid;
+  justify-content: center;
+  gap: 48px;
+  margin-inline: auto;
+  justify-items: center;
+}
+.footerRectangle {
+  
+  width: 101px;
+  height: 4px;
+  background-color: #D87D4A;
+}
+.footerHeader svg {
+  margin-inline: auto;
+}
+
+.footerLinks {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 16px;
+}
+.footerText {
+  width: 327px;
+}
+.footerCopyright {
+  font-family: Manrope;
+font-size: 15px;
+font-weight: 700;
+line-height: 25px;
+text-align: left;
+color: #FFFFFF;
+opacity: 50%;
+}
+.footerSocials {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
 
 
 
@@ -282,6 +415,8 @@ bottom: 55px;
   font-weight: 400;
   line-height: 25px;
   letter-spacing: 0px;
+  opacity: 50%;
+  text-align: center;
 }
 
 .mButton1 {
@@ -332,4 +467,17 @@ bottom: 55px;
 
 .bg-black {
   background-color: #000000;
+}
+.ls-1 {
+  letter-spacing: 1px;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
+.txtWhite {
+  color: #FFFFFF;
+}
+.txtOrange {
+  color: #D87D4A;
+  display: inline;
 }
