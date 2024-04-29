@@ -16,6 +16,7 @@ export default function Container() {
     function MainPageContent() {
         return(
             <>
+            
             <div className="containerWrapper">
                 <div className="selectionContent">
                     <div className="selectionProduct">

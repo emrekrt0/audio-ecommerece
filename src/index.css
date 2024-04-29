@@ -48,11 +48,11 @@ header {
 .headerDivider {
   border: 1px solid #FFFFFF;
   opacity: 10.4%;
-  margin-bottom: 108px;
 }
 .headerTexts {
   width: 328px;
   margin-inline: auto;
+  margin-top: 108px;
 }
 .headerHeadline h3 {
   font-family: Manrope;
@@ -100,6 +100,14 @@ header {
 .headerButton p {
   font-size: 12px;
 }
+.goesBlack {
+  background-color: #000000;
+  opacity: 40%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
 .containerWrapper {
   display: grid;
   justify-content: center;
@@ -138,6 +146,23 @@ text-align: center;
 .ovalPlace {
   position: relative;
   bottom: 54px;
+}
+.navOn {
+  position: relative;
+  z-index: 2;
+}
+.navOn .selectionContent {
+  height: 750px;
+  gap: 0px;
+}
+.navOn .selectionContent .selectionProduct .selectionImages {
+  top: -150px;
+}
+.navOn .selectionContent .selectionProduct .selectionTexts {
+  bottom: 229px;
+}
+.navOn .selectionContent .selectionProduct .selectionSVG {
+  top: 50px;
 }
 .bigProduct {
   margin-top: 229px;
@@ -479,6 +504,9 @@ opacity: 50%;
 .bg-black {
   background-color: #000000;
 }
+.bg-white {
+  background-color: #FFFFFF;
+}
 .ls-1 {
   letter-spacing: 1px;
 }
@@ -491,4 +519,7 @@ opacity: 50%;
 .txtOrange {
   color: #D87D4A;
   display: inline;
+}
+.none {
+  display: none;
 }

@@ -1,7 +1,13 @@
 // import Bitmap from '../static/Bitmap.svg';
+import React, {useState} from 'react';
+import Navbar from './smallComp/Navbar';
 
 export default function Header() {
-
+    const [navbar, setNavbar] = useState(false);
+    function openNavbar() {
+        setNavbar(!navbar);
+        console.log(navbar);
+    }
     function MainPageHeader() {
         return (
             <div className="headerHeadline">
@@ -22,12 +28,14 @@ export default function Header() {
             <header className='headerBackground'>
                 <div className="headerTop posAbs">
                     <div className="headerItems">
-                        <div className="hamburgerIcon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                <rect width="16" height="3" fill="white"/>
-                                <rect y="6" width="16" height="3" fill="white"/>
-                                <rect y="12" width="16" height="3" fill="white"/>
-                            </svg>
+                        <div onClick={openNavbar}>
+                            <div className="hamburgerIcon">  
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                    <rect width="16" height="3" fill="white"/>
+                                    <rect y="6" width="16" height="3" fill="white"/>
+                                    <rect y="12" width="16" height="3" fill="white"/>
+                                </svg>
+                            </div>
                         </div>
                         <div className="headerTitle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="143" height="25" viewBox="0 0 143 25" fill="none">
@@ -41,11 +49,13 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="headerDivider"></div>
-                    <div className="headerTexts">
+                    {navbar ? <Navbar /> : ''}
+                    <div className={`headerTexts ${navbar ? 'none' : ''}`}>
                         <MainPageHeader />
                     </div>
                 </div>
             </header>
+            {navbar ? <div className='goesBlack'></div> : ""}
 
         </>
     )
