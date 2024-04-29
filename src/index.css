@@ -223,7 +223,12 @@ font-weight: 700;
 line-height: 17.76px;
 letter-spacing: 1px;
 text-align: left;
-
+}
+.smallCardsButton:hover{
+  background-color: #000000;
+}
+.smallCardsButton p:hover {
+  color: #FFFFFF;
 }
 
 .smallCardsM {
@@ -260,6 +265,12 @@ text-align: left;
   line-height: 17.76px;
   letter-spacing: 1px;
   text-align: left;  
+}
+.smallCardsButtonM:hover{
+  background-color: #000000;
+}
+.smallCardsButtonM p:hover {
+  color: #FFFFFF;
 }
 footer {
   display: grid;
