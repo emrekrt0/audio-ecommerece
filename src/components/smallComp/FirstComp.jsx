@@ -3,6 +3,7 @@ import headphoneImage from '../../assets/productselection/headphoneImage.svg';
 import speakerImage from '../../assets/productselection/speakerImage.svg';
 import earphoneImage from '../../assets/productselection/earphoneImage.svg';
 import oval from '../../assets/productselection/oval.svg';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function FirstComp() {
     return(
@@ -20,7 +21,7 @@ export default function FirstComp() {
                         <div className="selectionTexts">
                             <h5 className='selectionHeaders'>HEADPHONES</h5>
                             <div className="button3">
-                                <h5 className='mButton3'>SHOP</h5>
+                                <NavLink to={'/headphones'}><h5 className='mButton3'>SHOP</h5></NavLink>
                                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
                                 </svg>
@@ -40,7 +41,7 @@ export default function FirstComp() {
                         <div className="selectionTexts">
                             <h5 className='selectionHeaders'>SPEAKERS</h5>
                             <div className="button3">
-                                <h5 className='mButton3'>SHOP</h5>
+                            <NavLink to={'/speakers'}><h5 className='mButton3'>SHOP</h5></NavLink>
                                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
                                 </svg>
@@ -60,7 +61,7 @@ export default function FirstComp() {
                         <div className="selectionTexts">
                             <h5 className='selectionHeaders'>EARPHONES</h5>
                             <div className="button3">
-                                <h5 className='mButton3'>SHOP</h5>
+                            <NavLink to={'/earphones'}><h5 className='mButton3'>SHOP</h5></NavLink>
                                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" stroke-width="2"/>
                                 </svg>
