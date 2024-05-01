@@ -369,6 +369,10 @@ opacity: 50%;
 }
 .categoryContainer {
   margin-bottom: 120px;
+  display: grid;
+  justify-content: center;
+  gap: 64px;
+  
 }
 .categoryHeader {
   width: 100%;
