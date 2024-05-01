@@ -5,6 +5,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Content from './components/Content.jsx'
 import Headphones from './components/Headphones.jsx'
+import Speakers from './components/Speakers.jsx'
+import Earphones from './components/Earphones.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,11 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/speakers',
-        element: <App />,
+        element: <Speakers />,
       },
       {
         path: '/earphones',
-        element: <App />,
+        element: <Earphones />,
       },
     ],
   }
