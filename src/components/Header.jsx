@@ -1,16 +1,16 @@
 // import Bitmap from '../static/Bitmap.svg';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Navbar from './smallComp/Navbar';
 import { MainPageHeader } from './Content';
 import { useNavigate } from 'react-router-dom';
+import { hMenuContext } from '../App';
 
 export default function Header() {
     const navigate = useNavigate();
-
-    const [navbar, setNavbar] = useState(false);
+    const {hamMenu ,setHamMenu} = useContext(hMenuContext);
     function openNavbar() {
-        setNavbar(!navbar);
-        console.log(navbar);
+        setHamMenu(!hamMenu);
+        console.log(hamMenu, 'hamMenu');
     }
     
     return (
@@ -40,13 +40,13 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="headerDivider"></div>
-                    {navbar ? <Navbar /> : ''}
-                    <div className={`headerTexts ${navbar ? 'none' : ''}`}>
+                    {hamMenu ? <Navbar /> : ''}
+                    <div className={`headerTexts ${hamMenu ? 'none' : ''}`}>
                         {navigate === '/home' ? <MainPageHeader /> : ''}
                     </div>
                 </div>
             </header>
-            {navbar ? <div className='goesBlack'></div> : ""}
+            {hamMenu ? <div className='goesBlack'></div> : ""}
 
         </>
     )
