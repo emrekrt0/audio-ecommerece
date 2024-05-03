@@ -414,21 +414,28 @@ opacity: 50%;
 }
 
 .cartContainer {
+  position: relative;
+  z-index: 2;
   margin-inline: auto;
   width: 327px;
-  height: 488px;
+  min-height: 488px;
   display: grid;
   align-items: center;
+  padding: 32px 28px;
+  align-content: space-between;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 .cartTop {
   display: flex;
-  padding: 32px 29px 0px 28px;
   justify-content: space-between;
 }
 
 .cartProductsContainer {
-  padding: 0px 28px;
+  display: grid;
+  gap: 24px;
 }
 
 .cartProducts {
@@ -442,7 +449,6 @@ opacity: 50%;
   align-items: center;
 }
 .cartFooter {
-  padding: 0px 29px 0px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -452,6 +458,46 @@ opacity: 50%;
   height: 48px;
   margin-inline: auto;
 }
+.cartH {
+  font-family: Manrope;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+}
+.cartPrice {
+font-family: Manrope;
+font-size: 14px;
+font-weight: 700;
+line-height: 25px;
+text-align: left;
+opacity: 50%;
+}
+.productInf .porductImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productInf .porductImg img {
+  position: absolute;
+}
+.productQty {
+  display: flex;
+  width: 96px;
+  height: 32px;
+  align-items: center;
+  gap: 13px;
+  justify-content: center;
+  background-color: #F1F1F1;
+}
+.pQtyNumb {
+font-family: Manrope;
+font-size: 13px;
+font-weight: 700;
+line-height: 17.76px;
+letter-spacing: 1px;
+text-align: center;
+}
 
 
 
@@ -459,6 +505,17 @@ opacity: 50%;
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* ortak cssler */
 .button3 {
   display: flex;
   flex-direction: row;
@@ -466,7 +523,6 @@ opacity: 50%;
   align-items: center;
   justify-content: center;
 }
-
 
 .posAbs {
   position: absolute;
@@ -580,7 +636,15 @@ opacity: 50%;
   color: #D87D4A;
 
 }
+.underline {
+  text-decoration: underline;
+  color: #000;
+  opacity: 50%;
+}
 
+.mb25 {
+  margin-bottom: 25px;
+}
 .mt15 {
   margin-top: 15px;
 
@@ -588,7 +652,6 @@ opacity: 50%;
 .tac {
   text-align: center;
 }
-
 .bg-black {
   background-color: #000000;
 }
@@ -613,4 +676,7 @@ opacity: 50%;
 }
 .h90 {
   height: 90px;
+}
+.op25 {
+  opacity: 25%;
 }
