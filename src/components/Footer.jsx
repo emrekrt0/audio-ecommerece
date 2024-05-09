@@ -6,7 +6,8 @@ import instagram from '../assets/footer/socialIcons/instagram.svg';
 export default function Footer() {
     return(
         <footer>
-                    <div className="ad">
+                {location.pathname ==! '/checkout' ?  
+                    <div className={`ad ${location.pathname =! '/checkout' ? '' : none}`}>
                         <div className="adImg">
                             <img src={footerImg} alt="" srcset="" />
                         </div>
@@ -18,7 +19,8 @@ export default function Footer() {
                                 <p className='mBody'>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> : null
+                }
                     <div className="footerMain">
                         <div className="footerInside">
                             <div className="footerRectangle"></div>

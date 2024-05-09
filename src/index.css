@@ -27,9 +27,8 @@ header {
   height: 600px;
 }
 .headerBackground {
-  background-image: url('src/static/Bitmap.svg'); 
-  background-repeat: no-repeat; 
-  background-size: cover;
+  width: 375px;
+  height: 600px;
   position: relative;
 }
 .headerTop {
@@ -37,13 +36,19 @@ header {
   flex-direction: column;
   justify-content: space-between;
   height: 58px;
+  position: absolute;
+  top: 0px;
+  gap: 108px;
 }
+
 .headerItems {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 24px;
   margin: 32px 0px;
+  width: 375px;
+
 }
 .headerDivider {
   border: 1px solid #FFFFFF;
@@ -52,7 +57,6 @@ header {
 .headerTexts {
   width: 328px;
   margin-inline: auto;
-  margin-top: 108px;
 }
 .headerHeadline h3 {
   font-family: Manrope;
@@ -367,6 +371,10 @@ opacity: 50%;
   gap: 16px;
   align-items: center;
 }
+.categoryItems {
+  position: relative;
+  top: 90px;
+}
 .categoryContainer {
   margin-bottom: 120px;
   display: grid;
@@ -498,7 +506,9 @@ line-height: 17.76px;
 letter-spacing: 1px;
 text-align: center;
 }
-
+.checkOutItems {
+  background-color: #FAFAFA;
+}
 
 
 
@@ -674,8 +684,14 @@ text-align: center;
 .none {
   display: none;
 }
+.gap0 {
+  gap: 0px;
+
+}
 .h90 {
   height: 90px;
+  position: fixed;
+  z-index: 10;
 }
 .op25 {
   opacity: 25%;

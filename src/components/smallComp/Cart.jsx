@@ -105,7 +105,7 @@ export default function Cart() {
                 <h6 className='mH6'>$ 5,396</h6>
             </div>
             <div className="cartCheckout">
-                <h1 className='mButton1 tac'>CHECKOUT</h1>
+                <NavLink to={'/checkout'}><h1 className='mButton1 tac'>CHECKOUT</h1></NavLink>
             </div>
         </div>
        </>

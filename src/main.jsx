@@ -7,6 +7,7 @@ import Content from './components/Content.jsx'
 import Headphones from './components/Headphones.jsx'
 import Speakers from './components/Speakers.jsx'
 import Earphones from './components/Earphones.jsx'
+import Checkout from './components/Checkout.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path: '/earphones',
         element: <Earphones />,
       },
+      {
+        path: '/checkout',
+        element: <Checkout />,
+      }
     ],
   }
 ])
