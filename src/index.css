@@ -22,14 +22,11 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 a {text-decoration: none; color: inherit;}
-header {
-  max-width: 375px;
-  height: 600px;
-}
+
 .headerBackground {
-  width: 375px;
-  height: 600px;
-  position: relative;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }
 .headerTop {
   display: flex;
@@ -39,6 +36,7 @@ header {
   position: absolute;
   top: 0px;
   gap: 108px;
+  width: 100%;
 }
 
 .headerItems {
@@ -47,7 +45,6 @@ header {
   justify-content: space-between;
   padding: 0px 24px;
   margin: 32px 0px;
-  width: 375px;
 
 }
 .headerDivider {
@@ -104,14 +101,7 @@ header {
 .headerButton p {
   font-size: 12px;
 }
-.goesBlack {
-  background-color: #000000;
-  opacity: 40%;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-}
+
 .containerWrapper {
   display: grid;
   justify-content: center;
@@ -152,8 +142,11 @@ text-align: center;
   bottom: 54px;
 }
 .navOn {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  height: 750px;
+  top: 90px;
+  width: 100%;
 }
 .navOn .selectionContent {
   height: 750px;
@@ -373,7 +366,7 @@ opacity: 50%;
 }
 .categoryItems {
   position: relative;
-  top: 90px;
+  padding-top: 90px;
 }
 .categoryContainer {
   margin-bottom: 120px;
@@ -422,7 +415,10 @@ opacity: 50%;
 }
 
 .cartContainer {
-  position: relative;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  right: 0;
   z-index: 2;
   margin-inline: auto;
   width: 327px;
@@ -510,7 +506,15 @@ text-align: center;
   background-color: #FAFAFA;
 }
 
-
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Make sure the backdrop is below the cart */
+}
 
 
 
@@ -691,8 +695,12 @@ text-align: center;
 .h90 {
   height: 90px;
   position: fixed;
-  z-index: 10;
+  width: 100%;
+  z-index: 100;
 }
 .op25 {
   opacity: 25%;
+}
+.top90 {
+  top: 90px;
 }

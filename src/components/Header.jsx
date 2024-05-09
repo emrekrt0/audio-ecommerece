@@ -13,6 +13,11 @@ export default function Header() {
     const {hamMenu ,setHamMenu} = useContext(hMenuContext);
     const {cart, setCart} = useContext(cartContext);
 
+    function handleBackdropClick() {
+        setCart(false)
+        setHamMenu(false)
+    }
+
     function openNavbar() {
         setHamMenu(!hamMenu);
         console.log(hamMenu, 'hamMenu');
@@ -24,7 +29,7 @@ export default function Header() {
     
     return (
         <>  
-           
+           {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
             <header className={`headerBackground ${location.pathname === '/home' ? '' : 'h90 bg-black'}`}>
                 {location.pathname === '/home' ? <img src={hBackGround} alt="" /> : null}
                 <div className={`headerTop ${hamMenu ? 'gap0' : ''}`}>
@@ -54,8 +59,7 @@ export default function Header() {
                         </div>
                         <div className={`headerDivider ${cart ? 'mb25' : ''}`}></div>
                     </div>
-                    {hamMenu ? <Navbar /> : ''}
-                    {cart ? <Cart /> : ''}
+                    
                     {hamMenu ? null :
                         location.pathname === '/home' ? <div className="headerTexts">
                             <MainPageHeader />
@@ -64,7 +68,9 @@ export default function Header() {
                     
                 </div>
             </header>
-            {hamMenu ? <div className='goesBlack'></div> : ""}
+            {hamMenu && <Navbar />}
+            {cart && <Cart /> }
+        
 
         </>
     )

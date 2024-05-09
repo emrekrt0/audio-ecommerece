@@ -3,17 +3,24 @@ import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import { hMenuContext } from '../../App';
+import { hMenuContext, cartContext } from '../../App';
 
 export default function Cart() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
+    const {cart, setCart} = useContext(cartContext)
 
+    function handleBackdropClick() {
+        setCart(false)
+        setHamMenu(false)
+    }
     function toggleHamMenu() {
         setHamMenu(!hamMenu)
         console.log(hamMenu, 'hamMenu firstcomp');
     }
     return(
        <>
+       {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
+       {cart && <div className='backdrop' onClick={handleBackdropClick}></div>}
         <div className="cartContainer">
             <div className="cartTop">
                 <div className="cartHeader">

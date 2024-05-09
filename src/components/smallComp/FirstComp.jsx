@@ -11,7 +11,7 @@ export default function FirstComp() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
 
     function toggleHamMenu() {
-        setHamMenu(!hamMenu)
+        setHamMenu(false)
         console.log(hamMenu, 'hamMenu firstcomp');
     }
     return(
