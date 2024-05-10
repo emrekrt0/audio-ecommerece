@@ -411,7 +411,6 @@ opacity: 50%;
 .contentButton {
   width: 160px;
   height: 48px;
-  padding: 29px;
 }
 
 .cartContainer {
@@ -505,15 +504,67 @@ text-align: center;
 .checkOutItems {
   background-color: #FAFAFA;
 }
+.goBckBtn {
+  padding-top: 106px;
+}
+.productDetailContainer {
+  display: grid;
+  justify-content: center;
+  gap: 24px;
+  width: 327px;
+  margin-inline: auto;
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1; /* Make sure the backdrop is below the cart */
+}
+.productDetailTop {
+  display: grid;
+  gap: 32px;
+}
+.productDetailTexts {
+  display: grid;
+  gap: 24px;
+}
+.productDetail {
+  display: grid;
+  gap: 88px;
+  margin-bottom: 32px;
+}
+.productDetail .productDetailTopImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productDetail .productDetailTopImg img {
+  position: absolute;
+}
+.productAddToCart {
+  display: flex;
+  gap: 8px;
+  width: 296px;
+}
+.productFeatures {
+  display: grid;
+  gap: 24px;
+}
+.productInTheBox {
+  display: grid;
+  gap: 24px;
+
+}
+.inTheBox {
+  display: grid;
+  gap: 8px;
+}
+.inTheBoxItem {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.productDetailImg {
+  display: grid;
+  gap: 20px;
+}
+.productDetailImg>img {
+  border-radius: 8px;
 }
 
 
@@ -528,6 +579,40 @@ text-align: center;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Make sure the backdrop is below the cart */
+}
 
 /* ortak cssler */
 .button3 {
@@ -650,6 +735,14 @@ text-align: center;
   color: #D87D4A;
 
 }
+.featuresH5 {
+  font-family: Manrope;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.8571428656578064px;
+  text-align: left;
+}
 .underline {
   text-decoration: underline;
   color: #000;
@@ -665,6 +758,9 @@ text-align: center;
 }
 .tac {
   text-align: center;
+}
+.tal {
+  text-align: left;
 }
 .bg-black {
   background-color: #000000;
@@ -703,4 +799,18 @@ text-align: center;
 }
 .top90 {
   top: 90px;
+}
+.fs15 {
+  font-size: 15px;
+}
+.spcevenly {
+  justify-content: space-evenly;
+}
+.w120h48 {
+  width: 120px;
+  height: 48px;
+}
+.w160h48 {
+  width: 160px;
+  height: 48px;
 }

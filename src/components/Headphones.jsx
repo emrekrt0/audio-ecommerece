@@ -2,12 +2,19 @@ import hp1 from '../assets/categoryImgs/headphones/hp1.png';
 import hp2 from '../assets/categoryImgs/headphones/hp2.png';
 import hp3 from '../assets/categoryImgs/headphones/hp3.png';
 import FirstComp from './smallComp/FirstComp';
+import { Link } from 'react-router-dom';
 
 
 
 export default function Headphones() {
     
-    
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
     
     return(
         <>
@@ -30,7 +37,7 @@ export default function Headphones() {
                         <h4 className='mH4 ls-1'>XX99 Mark II HEADPHONES</h4>
                         <p className='mBody'>The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.</p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                            <Link to={`/details/xx99-mark-II-headphones-detail`} onClick={scrollToTop}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                     </div>
                     </div>
                 </div>
@@ -47,7 +54,7 @@ export default function Headphones() {
                         <h4 className='mH4 ls-1'>XX99 Mark I HEADPHONES</h4>
                         <p className='mBody'>As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.</p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                        <Link to={`/details/xx99-mark-I-headphones-detail`} onClick={scrollToTop}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                     </div>
                     </div>
                 </div>
@@ -64,7 +71,7 @@ export default function Headphones() {
                         <h4 className='mH4 ls-1'>XX59 HEADPHONES</h4>
                         <p className='mBody'>Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.</p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                        <Link to={`/details/xx59-headphones-detail`} onClick={scrollToTop}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                     </div>
                     </div>
                 </div>

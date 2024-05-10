@@ -7,6 +7,7 @@ import Group6 from '../assets/productselection/Group6.svg';
 import zx7speaker from '../assets/carts/zx7speaker.svg';
 import yx1earphones from '../assets/carts/yx1earphones.svg';
 import FirstComp from './smallComp/FirstComp';
+import { Link } from 'react-router-dom';
 
 export function MainPageHeader() {
     return (
@@ -16,7 +17,7 @@ export function MainPageHeader() {
                 HEADPHONES</h1>
                 <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                 <div className="headerButton">
-                    <a href="#!"><p className="mButton1">SEE PRODUCT</p></a>
+                    <Link to={`/details/xx99-mark-I-headphones-detail`}><p className="mButton1">SEE PRODUCT</p></Link>
                 </div>
         </div>
         )

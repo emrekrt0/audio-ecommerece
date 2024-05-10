@@ -19,7 +19,7 @@ export default function Cart() {
     }
     return(
        <>
-       {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
+       
        {cart && <div className='backdrop' onClick={handleBackdropClick}></div>}
         <div className="cartContainer">
             <div className="cartTop">
