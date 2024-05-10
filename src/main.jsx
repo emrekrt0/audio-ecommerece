@@ -8,6 +8,8 @@ import Headphones from './components/Headphones.jsx'
 import Speakers from './components/Speakers.jsx'
 import Earphones from './components/Earphones.jsx'
 import Checkout from './components/Checkout.jsx'
+import ProductDetail from './components/ProductDetail.jsx'
+import { useParams } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />,
+      },
+      {
+        path: '/details/:slug',
+        element: <ProductDetail />,
       }
     ],
   }
