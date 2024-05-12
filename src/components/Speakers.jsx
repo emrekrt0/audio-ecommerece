@@ -1,5 +1,6 @@
 import ss1 from '../assets/categoryImgs/speakers/ss1.png';
 import ss2 from '../assets/categoryImgs/speakers/ss2.png';
+import { Link } from 'react-router-dom';
 import FirstComp from './smallComp/FirstComp';
 
 
@@ -29,7 +30,7 @@ export default function Speakers() {
                             Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.
                         </p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                            <Link to={`/details/zx-9-speaker-detail`}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                     </div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@ export default function Speakers() {
                         <p className='mBody'>
                             Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.                    </p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                            <Link to={`/details/zx-7-speaker-detail`}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                     </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ep1 from '../assets/categoryImgs/earphones/ep1.png';
 import FirstComp from './smallComp/FirstComp';
 
@@ -27,7 +28,7 @@ export default function Speakers() {
                         <p className='mBody'>
                             Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.                    </p>
                         <div className="contentButton">
-                            <p className='mButton1 tac'>SEE PRODUCT</p>
+                            <Link to={`/details/yx1-earphones-detail`}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
                         </div>
                     </div>
                 </div>

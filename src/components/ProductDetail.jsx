@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import hp1 from '../assets/categoryImgs/headphones/hp1.png'
 import hp2 from '../assets/categoryImgs/headphones/hp2.png'
 import hp3 from '../assets/categoryImgs/headphones/hp3.png'
+import sp1 from '../assets/categoryImgs/speakers/ss1.png'
+import sp2 from '../assets/categoryImgs/speakers/ss2.png'
 import hpd11 from '../assets/detailImgs/headphones/hpd11.jpg'
 import hpd12 from '../assets/detailImgs/headphones/hpd12.jpg'
 import hpd13 from '../assets/detailImgs/headphones/hpd13.jpg'
@@ -12,6 +14,17 @@ import hpd23 from '../assets/detailImgs/headphones/hpd23.jpg'
 import hpd31 from '../assets/detailImgs/headphones/hpd31.jpg'
 import hpd32 from '../assets/detailImgs/headphones/hpd32.jpg'
 import hpd33 from '../assets/detailImgs/headphones/hpd33.jpg'
+import spd11 from '../assets/detailImgs/speakers/spd11.jpg'
+import spd12 from '../assets/detailImgs/speakers/spd12.jpg'
+import spd13 from '../assets/detailImgs/speakers/spd13.jpg'
+import spd21 from '../assets/detailImgs/speakers/spd21.jpg'
+import spd22 from '../assets/detailImgs/speakers/spd22.jpg'
+import spd23 from '../assets/detailImgs/speakers/spd23.jpg'
+import ep1 from '../assets/categoryImgs/earphones/ep1.png'
+import epd11 from '../assets/detailImgs/earphones/epd11.jpg'
+import epd12 from '../assets/detailImgs/earphones/epd12.jpg'
+import epd13 from '../assets/detailImgs/earphones/epd13.jpg'
+
 import FirstComp from "./smallComp/FirstComp";
 import {useNavigate} from 'react-router-dom';
 
@@ -71,7 +84,62 @@ export default function ProductDetail() {
             ["1x", "3.5mm 5m Audio Cable"], 
         ],
         detail_images : [hpd31, hpd32, hpd33],
-    }]
+    },
+    { 
+        slug: "zx-9-speaker-detail",
+        new: true,
+        image: sp1,
+        title: "ZX9 SPEAKER",
+        description: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+        price: "$ 4,500",
+        features_text : "Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m).",
+        features_text2 : "Discover clear, more natural sounding highs than the competition with ZX9’s signature planar diaphragm tweeter. Equally important is its powerful room-shaking bass courtesy of a 6.5” aluminum alloy bass unit. You’ll be able to enjoy equal sound quality whether in a large room or small den. Furthermore, you will experience new sensations from old songs since it can respond to even the subtle waveforms.",
+        in_the_box : [
+            ["2x", "Speaker Unit"],
+            ["2x", "Speaker Cloth Panel"], 
+            ["1x", "User Manual"], 
+            ["1x", "3.5mm 10m Audio Cable"],
+            ["1x", "10m Optical Cable"], 
+        ],
+        detail_images : [spd11, spd12, spd13],
+    },
+    { 
+        slug: "zx-7-speaker-detail",
+        new: false,
+        image: sp2,
+        title: "ZX7 SPEAKER",
+        description: "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+        price: "$ 3,500",
+        features_text : "Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.",
+        features_text2 : "The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.",
+        in_the_box : [
+            ["2x", "Speaker Unit"],
+            ["2x", "Speaker Cloth Panel"], 
+            ["1x", "User Manual"], 
+            ["1x", "3.5mm 7.5m Audio Cable"],
+            ["1x", "7.5m Optical Cable"], 
+        ],
+        detail_images : [spd21, spd22, spd23],
+    },
+    { 
+        slug: "yx1-earphones-detail",
+        new: true,
+        image: ep1,
+        title: "YX1 WIRELESS EARPHONES",
+        description: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+        price: "$ 599",
+        features_text : "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.",
+        features_text2 : "The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The new 7-hour battery life can be extended up to 28 hours with the charging case, giving you uninterrupted play time. Exquisite craftsmanship with a splash resistant design now available in an all new white and grey color scheme as well as the popular classic black.",
+        in_the_box : [
+            ["2x", "Earphone Unit"],
+            ["6x", "Multi-size Earplugs"], 
+            ["1x", "User Manual"], 
+            ["1x", "USB-C Charging Cable"],
+            ["1x", "Travel Pouch"], 
+        ],
+        detail_images : [epd11, epd12, epd13],
+    }
+    ]
     ;
     function handleGoBack() {
         navigate(-1);

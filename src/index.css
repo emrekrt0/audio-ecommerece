@@ -101,7 +101,12 @@ a {text-decoration: none; color: inherit;}
 .headerButton p {
   font-size: 12px;
 }
-
+.hamburgerIcon {
+  cursor: pointer;
+}
+.headerCart {
+  cursor: pointer;
+}
 .containerWrapper {
   display: grid;
   justify-content: center;
@@ -503,9 +508,77 @@ text-align: center;
 }
 .checkOutItems {
   background-color: #FAFAFA;
+  width: 375px;
+  display: grid;
+  margin-inline: auto;
+  padding-top: 90px;
 }
+.checkOutTop {
+  padding: 16px 0px 0px 24px;
+}
+
+.checkOutContainer {
+  display: grid;
+  gap: 32px;
+  margin: 24px;
+  background-color: #fff;
+}
+.cOutContentTop {
+  padding: 24px 0px 0px 24px;
+}
+.cOutForm {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+  padding: 0px 24px 24px 23px;
+}
+.cOutBilling, .cOutShipping, .cOutPayment {
+  display: grid;
+  gap: 24px;
+}
+.cOutFormItems {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.cOutFormItems label {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.39px;
+  letter-spacing: -0.2142857164144516px;
+  text-align: left;
+}
+.cOutFormItems input:not([type="radio"]) {
+  width: 280px;
+  height: 56px;
+  padding: 18px 24px 19px 24px;
+  border: 1px solid #CFCFCF;
+  border-radius: 8px;
+}
+.cOutFormItems input::placeholder {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.12px;
+  letter-spacing: -0.25px;
+  text-align: left;
+
+}
+.cPayment {
+  width: 280px;
+  height: 56px;
+  padding: 18px 24px 19px 24px;
+  border: 1px solid #CFCFCF;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .goBckBtn {
   padding-top: 106px;
+  cursor: pointer;
 }
 .productDetailContainer {
   display: grid;
@@ -813,4 +886,7 @@ text-align: center;
 .w160h48 {
   width: 160px;
   height: 48px;
+}
+.aic {
+  align-items: center;
 }
