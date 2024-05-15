@@ -27,6 +27,7 @@ a {text-decoration: none; color: inherit;}
   display: grid;
   justify-content: center;
   justify-items: center;
+  margin-bottom: 40px;
 }
 .headerTop {
   display: flex;
@@ -114,40 +115,45 @@ a {text-decoration: none; color: inherit;}
 .selectionContent {
   display: grid;
   justify-items: center;
-  gap: 68px;
+  gap: 16px;
+  margin-bottom: 120px;
 }
 .selectionProduct {
-  /* background-image: url('src/assets/productselection/Mask.svg');
-  background-repeat: no-repeat; */
   width: 327px;
-  height: 165px;
+  height: 217px;
+  position: relative;
 
 }
 .selectionSVG {
   position: relative;
-  top: 92px;
+  top: 52px;
 }
 .selectionImages {
   display: grid;
   justify-items: center;
-  position: relative;
-  top: -122px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.selectionImages>img {
+  height: 104px;
 }
 .selectionTexts {
-  position: relative;
-  bottom: 187px;
+  position: absolute;
+  top: 88px;
   display: grid;
   gap: 17px;
+  width: 100%;
 }
 .selectionTexts h5 {
 text-align: center;
 }
 .ovalPlace {
-  position: relative;
-  bottom: 54px;
+  position: absolute;
+  top: 42px;
 }
 .navOn {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   height: 750px;
   top: 90px;
@@ -157,20 +163,11 @@ text-align: center;
   height: 750px;
   gap: 0px;
 }
-.navOn .selectionContent .selectionProduct .selectionImages {
-  top: -150px;
+.productsContainer{
+  display: grid;
+  gap: 24px;
+  margin-bottom: 120px;
 }
-.navOn .selectionContent .selectionProduct .selectionTexts {
-  bottom: 229px;
-}
-.navOn .selectionContent .selectionProduct .selectionSVG {
-  top: 50px;
-}
-.bigProduct {
-  margin-top: 229px;
-  margin-bottom: 24px;
-}
-
 .bigSpeaker {
   position: relative;
   display: grid;
@@ -224,7 +221,6 @@ bottom: 55px;
 .smallCards {
   position: relative;
   height: 320px;
-  margin-bottom: 24px;
 }
 .smallCardsImg {
   position: absolute;
@@ -253,17 +249,15 @@ text-align: left;
 }
 .smallCardsButton:hover{
   background-color: #000000;
+  color: #fff;
 }
-.smallCardsButton p:hover {
-  color: #FFFFFF;
-}
+
 
 .smallCardsM {
   position: relative;
   height: 424px;
   display: grid;
   gap: 24px;
-  margin-bottom: 120px;
 }
 
 .smallCardsTextsM {
@@ -295,8 +289,6 @@ text-align: left;
 }
 .smallCardsButtonM:hover{
   background-color: #000000;
-}
-.smallCardsButtonM p:hover {
   color: #FFFFFF;
 }
 footer {
@@ -374,7 +366,6 @@ opacity: 50%;
   padding-top: 90px;
 }
 .categoryContainer {
-  margin-bottom: 120px;
   display: grid;
   justify-content: center;
   gap: 64px;

@@ -6,8 +6,8 @@ import instagram from '../assets/footer/socialIcons/instagram.svg';
 export default function Footer() {
     return(
         <footer>
-                {location.pathname ==! '/checkout' ?  
-                    <div className={`ad ${location.pathname =! '/checkout' ? '' : none}`}>
+                {location.pathname !== '/checkout' ?  
+                    <div className={`ad ${location.pathname !== '/checkout' ? '' : 'none'}`}>
                         <div className="adImg">
                             <img src={footerImg} alt="" srcset="" />
                         </div>
