@@ -26,6 +26,7 @@ import epd12 from '../assets/detailImgs/earphones/epd12.jpg'
 import epd13 from '../assets/detailImgs/earphones/epd13.jpg'
 
 import FirstComp from "./smallComp/FirstComp";
+import YouMayAlsoLike from "./smallComp/YouMayAlsoLike";
 import {useNavigate} from 'react-router-dom';
 
 export default function ProductDetail() {
@@ -36,6 +37,7 @@ export default function ProductDetail() {
     { 
         slug: "xx99-mark-II-headphones-detail",
         new: true,
+        category: "headphones",
         image: hp1,
         title: "XX99 Mark II Headphones",
         description: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
@@ -54,6 +56,7 @@ export default function ProductDetail() {
     { 
         slug: "xx99-mark-I-headphones-detail",
         new: false,
+        category: "headphones",
         image: hp2,
         title: "XX99 Mark I Headphones",
         description: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
@@ -71,6 +74,7 @@ export default function ProductDetail() {
     { 
         slug: "xx59-headphones-detail",
         new: false,
+        category: "headphones",
         image: hp3,
         title: "XX59 Headphones",
         description: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -88,6 +92,7 @@ export default function ProductDetail() {
     { 
         slug: "zx-9-speaker-detail",
         new: true,
+        category: "speakers",
         image: sp1,
         title: "ZX9 SPEAKER",
         description: "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
@@ -106,6 +111,7 @@ export default function ProductDetail() {
     { 
         slug: "zx-7-speaker-detail",
         new: false,
+        category: "speakers",
         image: sp2,
         title: "ZX7 SPEAKER",
         description: "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
@@ -124,6 +130,7 @@ export default function ProductDetail() {
     { 
         slug: "yx1-earphones-detail",
         new: true,
+        category: "earphones",
         image: ep1,
         title: "YX1 WIRELESS EARPHONES",
         description: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
@@ -220,7 +227,11 @@ export default function ProductDetail() {
                             
                             ))}
                         </div>
-                        <div className="youMayAlsoLike"></div>
+                        <div className="youMayAlsoLike">
+                            <div className="youMayAlsoLike">
+            <                   YouMayAlsoLike products={products} currentProductSlug={slug} />
+                            </div>
+                        </div>
                     </div>
                 </div>
         </>
