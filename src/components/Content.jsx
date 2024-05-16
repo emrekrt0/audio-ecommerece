@@ -37,7 +37,7 @@ export default function Container() {
                     <div className="bigProduct">
                         <div className="bigSpeaker">
                             <div className="bigSpeakerImg">
-                                <svg width="327" height="600" viewBox="0 0 327 600" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg width="327" height="600" viewBox="0 0 327 600" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                                     <rect width="327" height="600" rx="8" fill="#D87D4A"/>
                                     <mask id="mask0_0_1" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="327" height="600">
                                     <rect width="327" height="600" rx="8" fill="white"/>
@@ -52,7 +52,7 @@ export default function Container() {
                                     </g>
                                     <defs>
                                     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                    <use xlink:href="#image0_0_1" transform="scale(0.00219298 0.00182482)"/>
+                                    <use xlinkHref="#image0_0_1" transform="scale(0.00219298 0.00182482)"/>
                                     </pattern>
                                     </defs>
                                 </svg>
