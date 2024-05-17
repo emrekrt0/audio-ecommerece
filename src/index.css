@@ -104,6 +104,8 @@ a {text-decoration: none; color: inherit;}
 }
 .hamburgerIcon {
   cursor: pointer;
+  position: relative;
+  z-index: 2;
 }
 .headerCart {
   cursor: pointer;
@@ -157,8 +159,11 @@ text-align: center;
   z-index: 2;
   height: 750px;
   top: 90px;
-  width: 100%;
+  width: 375px;
   overflow: auto;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
 }
 .navOn .selectionContent {
   height: 750px;
@@ -578,7 +583,7 @@ text-align: center;
   gap: 24px;
   width: 327px;
   margin-inline: auto;
-
+  margin-bottom: 120px;
 }
 .productDetailTop {
   display: grid;
@@ -631,16 +636,84 @@ text-align: center;
 .productDetailImg>img {
   border-radius: 8px;
 }
-
-
-
-
-
-
-
-
-
-
+.youMayAlsoLike {
+  display: grid;
+  justify-items: center;
+  margin-bottom: 120px;
+}
+.youMayAlsoLike>h5 {
+  margin-bottom: 40px;
+}
+.ymayLikeContainer {
+  display: grid;
+  gap: 56px;
+}
+.ymayLikeContent {
+  width: 327px;
+  height: 265px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.ymayLikeContent .ymayLikeImg>img {
+  position: absolute;
+  height: 95px;
+}
+.ymayLikeImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cOutPay {
+  margin-bottom: 65px;
+}
+.cOutSummary .cOutPay>.summaryContainer {
+  margin-inline: auto;
+  width: 327px;
+  min-height: 488px;
+  display: grid;
+  align-items: center;
+  padding: 32px 28px;
+  align-content: space-between;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+.sumFooter {  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sumFooterContent {
+  margin-bottom: 24px;
+}
+.sumBttn {
+  width: 279px;
+  height: 48px;
+}
+.cOutModal {
+  display: flex;
+  justify-content: center;
+}
+.modals {
+  position: fixed;
+  z-index: 3;
+  top: 224px;
+  width: 327px;
+  height: 600px;
+  overflow: auto;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.block {
+  display: block;
+}
 
 
 
@@ -724,6 +797,7 @@ text-align: center;
   font-weight: 700;
   line-height: 38px;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .mH5 {
   font-family: Manrope;
@@ -731,6 +805,8 @@ text-align: center;
   font-weight: 700;
   line-height: 33px;
   letter-spacing: 1.7142857313156128px;
+  text-transform: uppercase;
+
 }
 .mH6 {
   font-family: Manrope;
@@ -785,6 +861,13 @@ text-align: center;
   text-align: center;
   color: #000000;
 }
+.smryNumb {
+  font-family: Manrope;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  opacity: 50%;
+}
 .mButton3 {
   font-family: Manrope;
   font-size: 13px;
@@ -813,7 +896,12 @@ text-align: center;
   color: #000;
   opacity: 50%;
 }
-
+.mb32{
+  margin-bottom: 32px;
+}
+.mb24 {
+  margin-bottom: 24px;
+}
 .mb25 {
   margin-bottom: 25px;
 }

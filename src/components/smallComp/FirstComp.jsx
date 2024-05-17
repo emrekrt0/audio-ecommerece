@@ -6,17 +6,12 @@ import oval from '../../assets/productselection/oval.svg';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { hMenuContext } from '../../App';
+import scrollToTop from './scrollToTop';
 
 export default function FirstComp() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    }
+    
 
     function toggleHamMenu() {
         setHamMenu(false)

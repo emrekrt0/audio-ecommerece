@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import Summary from "./smallComp/Summary"
 
 export default function Checkout() {
     const navigate = useNavigate()
@@ -76,7 +77,8 @@ export default function Checkout() {
                     </div>
                 </div>
                 <div className="cOutSummary">
-                <   div className="cOutPay">
+                    <div className="cOutPay">
+                     <Summary />
                     </div>
                 </div>
                     

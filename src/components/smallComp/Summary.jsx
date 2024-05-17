@@ -1,33 +1,36 @@
+import React from 'react'
 import hs1 from '../../assets/cart/hs-1.png'
 import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
-import { NavLink, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
-import { hMenuContext, cartContext } from '../../App';
+import { useState } from 'react'
 
-export default function Cart() {
-    const {hamMenu, setHamMenu} = useContext(hMenuContext)
-    const {cart, setCart} = useContext(cartContext)
+export default function Summary() {
+    const [modal, setModal] = useState(false)
 
     function handleBackdropClick() {
-        setCart(false)
-        setHamMenu(false)
+        setModal(false);
     }
-    function toggleHamMenu() {
-        setHamMenu(!hamMenu)
-        console.log(hamMenu, 'hamMenu firstcomp');
+
+    function openModal() {
+        setModal(true);
     }
+
+    function ShowModal() {
+        return (
+           <div className="modals">
+                <div className="modal-content">
+                    <p></p>
+                </div>
+          </div>
+        )
+    }
+    
     return(
-       <>
-       
-       {cart && <div className='backdrop' onClick={handleBackdropClick}></div>}
-        <div className="cartContainer">
+    <>
+        <div className="summaryContainer">
             <div className="cartTop">
                 <div className="cartHeader">
-                    <h6 className='mH6'>CART (3)</h6>
-                </div>
-                <div className="cartRmvBtn">
-                    <p className='mBody underline'>Remove All</p>
+                    <h6 className='mH6'>SUMMARY</h6>
                 </div>
             </div>
             <div className="cartProductsContainer">
@@ -46,14 +49,8 @@ export default function Cart() {
                             <h6 className='cartPrice'>$ 2,999</h6>
                         </div>
                     </div>
-                    <div className="productQty">
-                        <div className="qtyRmv pQtyNumb op25">
-                            -
-                        </div>
-                        <h3 className='pQtyNumb'>1</h3>
-                        <div className="qtyAdd pQtyNumb op25">
-                            +
-                        </div>
+                    <div className="smrytQty">
+                        <h3 className='smryNumb'>x1</h3>
                     </div>
                 </div>
                 <div className="cartProducts">
@@ -71,14 +68,8 @@ export default function Cart() {
                             <h6 className='cartPrice'>$ 899</h6>
                         </div>
                     </div>
-                    <div className="productQty">
-                        <div className="qtyRmv pQtyNumb op25">
-                            -
-                        </div>
-                        <h3 className='pQtyNumb'>1</h3>
-                        <div className="qtyAdd pQtyNumb op25">
-                            +
-                        </div>
+                    <div className="smrytQty">
+                        <h3 className='smryNumb'>x2</h3>
                     </div>
                 </div>
                 <div className="cartProducts">
@@ -96,25 +87,41 @@ export default function Cart() {
                             <h6 className='cartPrice'>$ 599</h6>
                         </div>
                     </div>
-                    <div className="productQty">
-                        <div className="qtyRmv pQtyNumb op25">
-                            -
-                        </div>
-                        <h3 className='pQtyNumb'>1</h3>
-                        <div className="qtyAdd pQtyNumb op25">
-                            +
-                        </div>
+                    <div className="smrytQty">
+                        <h3 className='smryNumb'>x1</h3>
                     </div>
                 </div>
             </div>
-            <div className="cartFooter">
-                <p className='mBody'>TOTAL</p>
-                <h6 className='mH6'>$ 5,396</h6>
+            <div className="sumFooterContainer">
+                <div className="sumFooterContent">
+                    <div className="sumFooter">
+                        <p className='mBody'>TOTAL</p>
+                        <h6 className='mH6'>$ 5,396</h6>
+                    </div>
+                    <div className="sumFooter">
+                        <p className='mBody'>SHIPPING</p>
+                        <h6 className='mH6'>$ 50</h6>
+                    </div>
+                    <div className="sumFooter mb24">
+                        <p className='mBody'>VAT (INCLUDED)</p>
+                        <h6 className='mH6'>$ 1,079</h6>
+                    </div>
+                </div>
+                <div className="sumFooter mb32">
+                    <p className='mBody'>GRAND TOTAL</p>
+                    <h6 className='mH6 txtOrange'>$ 5,446</h6>
+                </div>
+                <div class="sumBttn">
+                    <p class="mButton1 tac" onClick={openModal}>CONTINUE & PAY</p>
+                </div>
             </div>
-            <div className="cartCheckout">
-                <NavLink to={'/checkout'}><h1 className='mButton1 tac' onClick={() => setCart(false)}>CHECKOUT</h1></NavLink>
-            </div>
+            
         </div>
-       </>
+        {modal && <div className="cOutModal">
+            {modal && <ShowModal />}
+            {modal && <div className='backdrop' onClick={handleBackdropClick}></div>}
+        </div>
+        }
+    </>
     )
 }
