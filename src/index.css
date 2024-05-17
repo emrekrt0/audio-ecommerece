@@ -158,6 +158,7 @@ text-align: center;
   height: 750px;
   top: 90px;
   width: 100%;
+  overflow: auto;
 }
 .navOn .selectionContent {
   height: 750px;
