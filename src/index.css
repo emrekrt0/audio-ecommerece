@@ -565,14 +565,48 @@ text-align: center;
 .cPayment {
   width: 280px;
   height: 56px;
-  padding: 18px 24px 19px 24px;
   border: 1px solid #CFCFCF;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
+.cPayment>input[type="radio"] {
+  display: none;
+}
+.cPayment>label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  padding: 18px 24px 19px 24px;
+}
+.cPayment>label::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #CFCFCF;
+  border-radius: 50%;
+}
+.cPayment>label::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: transparent;
+  left: 29px;
+}
+.cPayment>input[type="radio"]:checked+label::after {
+  background-color: #D87D4A;
+}
+.cPayment>input[type="radio"]:checked+label {
+  width: 280px;
+  height: 56px;
+  padding: 18px 24px 19px 24px;
+  border: 1px solid #D87D4A;
+  border-radius: 8px;
+}
 .goBckBtn {
   padding-top: 106px;
   cursor: pointer;
