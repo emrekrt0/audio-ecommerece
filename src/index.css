@@ -792,8 +792,17 @@ text-align: center;
   bottom: 0;
   padding-left: 24px;
 }
-.block {
-  display: block;
+
+
+.headerBackground img {
+  content: url('./static/Bitmap.svg');
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .headerBackground img {
+  content: url('./static/BitmapTablet.svg');
+  }
 }
 
 
@@ -821,8 +830,7 @@ text-align: center;
 
 
 
-
-
+/* Backdrop */
 .backdrop {
   position: fixed;
   top: 0;

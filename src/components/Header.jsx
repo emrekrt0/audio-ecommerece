@@ -2,6 +2,7 @@
 import React, {useState, useContext} from 'react';
 import Navbar from './smallComp/Navbar';
 import hBackGround from '../static/Bitmap.svg'
+import hBackGroundTablet from '../static/BitmapTablet.svg'
 import { MainPageHeader } from './Content';
 import { useNavigate, useLocation, NavLink } from 'react-router-dom';
 import { hMenuContext, cartContext } from '../App';
@@ -31,7 +32,7 @@ export default function Header() {
         <>  
            {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
             <header className={`headerBackground ${location.pathname === '/home' ? '' : 'h90 bg-black'}`}>
-                {location.pathname === '/home' ? <img src={hBackGround} alt="" /> : null}
+                {location.pathname === '/home' ? <img alt="" /> : null}
                 <div className={`headerTop ${hamMenu ? 'gap0' : ''}`}>
                     <div className="headerTopItems">
                         <div className="headerItems">
