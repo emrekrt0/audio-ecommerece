@@ -16,7 +16,7 @@ export default function Checkout() {
                 </div>
                 <div className="checkOutContainer">
                     <div className="cOutContentTop">
-                        <h6 className="mH6">CHECKOUT</h6>
+                        <h4 className="mH4 ls-1">CHECKOUT</h4>
                     </div>
                     <div className="cOutForm">
                         <div className="cOutBilling">
