@@ -32,7 +32,7 @@ export default function Header() {
         <>  
            {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
             <header className={`headerBackground ${location.pathname === '/home' ? '' : 'h90 bg-black'}`}>
-                {location.pathname === '/home' ? <img alt="" /> : null}
+                {location.pathname === '/home' ? <img src={hBackGroundTablet} alt="" /> : null}
                 <div className={`headerTop ${hamMenu ? 'gap0' : ''}`}>
                     <div className="headerTopItems">
                         <div className="headerItems">
