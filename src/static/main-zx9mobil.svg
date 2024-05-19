@@ -1,0 +1,19 @@
+<svg width="327" height="600" viewBox="0 0 327 600" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <rect width="327" height="600" rx="8" fill="#D87D4A"/>
+    <mask id="mask0_0_1" mask-type="luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="327" height="600">
+    <rect width="327" height="600" rx="8" fill="white"/>
+    </mask>
+    <g mask="url(#mask0_0_1)">
+    <g opacity="0.202147">
+    <circle cx="162.5" cy="158.5" r="139" stroke="white"/>
+    <circle cx="163" cy="158" r="159.5" stroke="white"/>
+    <circle cx="163" cy="158" r="278.5" stroke="white"/>
+    </g>
+    <rect x="77.4817" y="55" width="172.248" height="207" fill="url(#pattern0)"/>
+    </g>
+    <defs>
+    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+    <use xlinkHref="#image0_0_1" transform="scale(0.00219298 0.00182482)"/>
+    </pattern>
+    </defs>
+</svg>

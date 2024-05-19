@@ -21,14 +21,14 @@ export default function FirstComp() {
         <div className="selectionContent">
                     <div className="selectionProduct">
                         <div className="selectionSVG">
-                            <svg width="327" height="165" viewBox="0 0 327 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="327" height="165" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
                                 <h5 className='selectionHeaders'>HEADPHONES</h5>
                                 <div className="button3">
                                     <NavLink to={'/headphones'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>SHOP</h5></NavLink>
-                                    <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" strokeWidth="2"/>
                                     </svg>
                                 </div>
@@ -36,7 +36,7 @@ export default function FirstComp() {
                         </div>
                         <div className='selectionImages'>
                             <img src={headphoneImage} alt="" />
-                            <svg className='ovalPlace' width="183" height="102" viewBox="0 0 183 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='ovalPlace' width="183" height="102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_f_0_2279)">
                                 <ellipse cx="91.4444" cy="51" rx="47.4444" ry="7" fill="black"/>
                                 </g>
@@ -52,7 +52,7 @@ export default function FirstComp() {
                     </div>
                     <div className="selectionProduct">
                         <div className="selectionSVG">
-                            <svg width="327" height="165" viewBox="0 0 327 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="327" height="165" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
@@ -67,7 +67,7 @@ export default function FirstComp() {
                         </div>
                         <div className='selectionImages'>
                             <img src={speakerImage} alt="" />
-                            <svg className='ovalPlace' width="183" height="102" viewBox="0 0 183 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='ovalPlace' width="183" height="102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_f_0_2279)">
                                 <ellipse cx="91.4444" cy="51" rx="47.4444" ry="7" fill="black"/>
                                 </g>
@@ -83,7 +83,7 @@ export default function FirstComp() {
                     </div>
                     <div className="selectionProduct">
                         <div className="selectionSVG">
-                            <svg width="327" height="165" viewBox="0 0 327 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="327" height="165" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
@@ -98,7 +98,7 @@ export default function FirstComp() {
                         </div>
                         <div className='selectionImages'>
                             <img src={earphoneImage} alt="" />
-                            <svg className='ovalPlace' width="183" height="102" viewBox="0 0 183 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg className='ovalPlace' width="183" height="102" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g filter="url(#filter0_f_0_2279)">
                                 <ellipse cx="91.4444" cy="51" rx="47.4444" ry="7" fill="black"/>
                                 </g>

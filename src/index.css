@@ -44,9 +44,15 @@ a {text-decoration: none; color: inherit;}
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 24px;
   margin: 32px 0px;
-
+}
+.leftSection {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 76px;
 }
 .headerDivider {
   border: 1px solid #FFFFFF;
@@ -179,17 +185,36 @@ text-align: center;
   display: grid;
   justify-items: center;
 }
+.bigSpeaker>img {
+  content: url('./static/main-zx9mobil.svg');
+
+}
+.bigSpeaker-content {
+  width: 100%;
+  position: absolute;
+  display: grid;
+  gap: 32px;
+  padding-top: 55px;
+}
+.bigSpeakerImg {
+  display: flex;
+  justify-content: center;
+  height: 207px;
+  width: 172.25px;
+  margin-inline: auto;
+}
+.bigSpeakerImg>img {
+  width: 100%;
+  height: 100%;
+}
 .bigSpeakerText {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  position: absolute;
-  height: 80px;
-  left: 7.03%;
-  right: 7.34%;
-  top: 294px;
+  width: 280px;
+  margin-inline: auto;
 }
-.bigSpeakerText h5 {
+.bigSpeakerText>h5 {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
@@ -201,7 +226,7 @@ text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
 }
-.bigSpeakerText p {
+.bigSpeakerText>p {
 font-family: 'Manrope';
 font-style: normal;
 font-weight: 400;
@@ -213,23 +238,20 @@ mix-blend-mode: normal;
 opacity: 0.75;
 }
 .bigSpeakerButton {
-position: absolute;
 width: 160px;
 bottom: 55px;
+margin-inline: auto;
 }
-.bigSpeakerAbs {
-  position: absolute;
-  left: 23.69%;
-  right: 23.63%;
-  top: 9.17%;
-  bottom: 56.33%;
-}
+
 .smallCards {
   position: relative;
   height: 320px;
 }
 .smallCardsImg {
   position: absolute;
+}
+.smallCardsImg>img {
+  content: url('./assets/carts/zx7speaker.svg');
 }
 .smallCardsTexts {
   position: absolute;
@@ -264,6 +286,9 @@ text-align: left;
   height: 424px;
   display: grid;
   gap: 24px;
+}
+.smallCardsImgM {
+  content: url('./assets/carts/yx1earphones.svg');
 }
 
 .smallCardsTextsM {
@@ -310,6 +335,13 @@ footer {
 }
 .adImg {
   margin-bottom: 40px;
+}
+.adImg>img {
+  width: 100%;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 .adTextHeader {
   margin-bottom: 32px;
@@ -799,9 +831,97 @@ text-align: center;
 }
 
 /* Responsive */
-@media ((max-width: 768px) and (min-width: 376px)) {
+/* Tablet Mode */
+@media (min-width: 768px ) {
   .headerBackground img {
   content: url('./static/BitmapTablet.svg');
+  }
+  .headerItems {
+    padding: 0px 40px;
+  }
+  .leftSection{
+    gap: 42px;
+  }
+  .headerTexts{
+    width: 400px;
+  }
+  .headerHeadline h1 {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+    margin-top: 24px;
+  }
+  .headerHeadline>p {
+    width: 349px;
+  }
+  .headerButton {
+    margin-top: 40px;
+  }
+  .productsContainer {
+    margin-bottom: 96px;
+  }
+  .selectionContent {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 689px;
+    gap: 10px;
+    margin-bottom: 96px;
+  }
+  .selectionProduct{
+    width: 223px;
+  }
+  .bigSpeaker>img {
+    content: url('./static/main-zx9tablet.svg');
+  }
+  
+  .bigSpeaker-content {
+    padding-top: 52px;
+    gap: 64px;
+  }
+  .bigSpeakerImg {
+    width: 197.21px;
+    height: 237px;
+  }
+  .bigSpeakerText {
+    width: 349px;
+  }
+  .bigSpeakerText>h5 {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
+  .bigSpeakerButton {
+  width: 160px;
+  bottom: 55px;
+  margin-inline: auto;
+  }
+  .smallCardsImg>img {
+    content: url('./assets/carts/zx7speaker-tablet.svg')
+  }
+  .smallCardsTexts {
+    left: 62px;
+  }
+  .smallCardsButton{
+    left: 63.5px;
+  }
+  .smallCardsM {
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+    height: 320px;
+  }
+  .smallCardsImgM {
+    content: url('./assets/carts/yx1earphones-tablet.svg');
+  }
+  .smallCardsTextsM {
+    width: 339px;
+    height: 320px;
+  }
+  .smallCardsTextsM .mH4 {
+    top: 101px;
+    left: 41px;
+  }
+  .smallCardsTextsM .smallCardsButtonM {
+    bottom: 101px;
+    left: 42.5px;
   }
 }
 
