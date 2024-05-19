@@ -4,8 +4,8 @@ import earphoneImage from '../assets/productselection/earphoneImage.svg';
 import oval from '../assets/productselection/oval.svg';
 import bigSpeaker from '../assets/bigProductSelection/bigSpeaker.png';
 import Group6 from '../assets/productselection/Group6.svg';
-import zx7speaker from '../assets/carts/zx7speaker.svg';
-import yx1earphones from '../assets/carts/yx1earphones.svg';
+import zx7speaker from '../assets/carts/zx7speaker-tablet.svg';
+import yx1earphones from '../assets/carts/yx1earphones-tablet.svg';
 import FirstComp from './smallComp/FirstComp';
 import zx9tablet from '../static/main-zx9tablet.svg';
 import { Link } from 'react-router-dom';
@@ -54,7 +54,7 @@ export default function Container() {
 
                     <div className="smallCards">
                         <div className="smallCardsImg">
-                            <img alt="" />
+                            <img src={zx7speaker} alt="" />
                         </div>
                         <div className="smallCardsTexts">
                             <h4 className='mH4'>ZX7 SPEAKER</h4>
@@ -65,7 +65,7 @@ export default function Container() {
                     </div>
                     <div className="smallCardsM">
                         <div className="smallCardsImgM">
-                            <img  alt="" />
+                            <img src={yx1earphones} alt="" />
                         </div>
                         <div className="smallCardsTextsM">
                             <h4 className='mH4'>YX1 EARPHONES</h4>

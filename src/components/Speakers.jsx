@@ -17,8 +17,8 @@ export default function Speakers() {
                 <div className="categoryContent">
                     <div className="contentHeader">
                         <div className="headerImgBg">
-                            <svg width="327" height="352" viewBox="0 0 327 352" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="327" height="352" rx="8" fill="#F1F1F1"/>
+                            <svg width="689" height="352"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="689" height="352" rx="8" fill="#F1F1F1"/>
                             </svg>
                         </div>
                         <img src={ss1} />
@@ -37,8 +37,8 @@ export default function Speakers() {
                 <div className="categoryContent">
                     <div className="contentHeader">
                         <div className="headerImgBg">
-                            <svg width="327" height="352" viewBox="0 0 327 352" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="327" height="352" rx="8" fill="#F1F1F1"/>
+                            <svg width="689" height="352" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="689" height="352" rx="8" fill="#F1F1F1"/>
                             </svg>
                         </div>
                         <img src={ss2} />

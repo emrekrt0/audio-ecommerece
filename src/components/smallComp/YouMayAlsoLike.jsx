@@ -17,13 +17,14 @@ const YouMayAlsoLike = ({ products, currentProductSlug }) => {
                 <div className='ymayLikeContent' key={product.slug}>
                     <div className="ymayLikeImg">
                         <div className="grayBG">
-                            <svg width="327" height="120" viewBox="0 0 327 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="327" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="327" height="120" rx="8" fill="#F1F1F1"/>
                             </svg>
                         </div>
                         <img src={product.image} alt={product.title} />
                     </div>
-                    <h5 className='mH5 tac'>{product.title} {product.title.length <=8 && product.category}</h5>
+                    <h5 className='mH5 tac'>{product.title} {product.title.length <=8 && 
+                    product.title !== 'XX59' && product.category}</h5>
                     <div class="contentButton">
                         <Link to={`/details/${product.slug}`} onClick={scrollToTop}><p class="mButton1 tac">SEE PRODUCT</p></Link>
                     </div>

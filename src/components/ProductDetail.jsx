@@ -169,38 +169,39 @@ export default function ProductDetail() {
                     <div className="productDetailTop">
                         <div className="productDetailTopImg">
                             <div className="bckgrnd">
-                                <svg width="327" height="327" viewBox="0 0 327 327" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="327" height="327" rx="8" fill="#F1F1F1"/>
+                                <svg width="281" height="480"  fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="281" height="480" rx="8" fill="#F1F1F1"/>
                                 </svg>
                             </div>
                             <img src={product.image} alt="" />
                         </div>
-                    
-                        <div className="productDetailTexts">
-                            {product.new && <div className="newProduct mOverline txtOrange"><p>NEW PRODUCT</p></div>}
-                            <div className="productHeadline">
-                                <h4 className="mH4 ls-1">{product.title} {product.category}</h4>
-                            </div>
-                            <div className="productText">
-                                <p className="mBody tal">{product.description}</p>
-                            </div>
-                            <div className="productPrice">
-                                <h6 className="mH6">{product.price}</h6>
-                            </div>
-                        </div>
-                    
-                        <div className="productAddToCart">
-                            <div className="productQty w120h48 spcevenly">
-                                <div className="qtyRmv pQtyNumb op25">
-                                    -
+                        <div className="productDetail-Texts-Cart">
+                            <div className="productDetailTexts">
+                                {product.new && <div className="newProduct mOverline txtOrange"><p>NEW PRODUCT</p></div>}
+                                <div className="productHeadline">
+                                    <h4 className="mH4 ls-1">{product.title} {product.category}</h4>
                                 </div>
-                                <h3 className='pQtyNumb'>1</h3>
-                                <div className="qtyAdd pQtyNumb op25">
-                                    +
+                                <div className="productText">
+                                    <p className="mBody tal">{product.description}</p>
+                                </div>
+                                <div className="productPrice">
+                                    <h6 className="mH6">{product.price}</h6>
                                 </div>
                             </div>
-                            <div className="productButton">
-                                <p className="mButton1 w160h48 tac">ADD TO CART</p>
+                        
+                            <div className="productAddToCart">
+                                <div className="productQty w120h48 spcevenly">
+                                    <div className="qtyRmv pQtyNumb op25">
+                                        -
+                                    </div>
+                                    <h3 className='pQtyNumb'>1</h3>
+                                    <div className="qtyAdd pQtyNumb op25">
+                                        +
+                                    </div>
+                                </div>
+                                <div className="productButton">
+                                    <p className="mButton1 w160h48 tac">ADD TO CART</p>
+                                </div>
                             </div>
                         </div>
                     </div>
