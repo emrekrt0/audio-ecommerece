@@ -57,6 +57,7 @@ export default function Checkout() {
                         </div>
                         <div className="cOutPayment">
                             <h5 className="mSubTitle txtOrange">PAYMENT DETAILS</h5>
+                            <label>Payment Method</label>
                             <div className="cOutFormItems cPayment">
                                 <input type="radio" id="eMoney" name="payment" value="eMoney" defaultChecked />
                                 <label htmlFor="eMoney">e-Money</label>

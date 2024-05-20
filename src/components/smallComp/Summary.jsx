@@ -38,7 +38,7 @@ export default function Summary() {
                         </div>
                     </div>
                     <div className="modal-body">
-                        <svg width="263" height="232" viewBox="0 0 263 232" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="263" height="232" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="263" height="232" rx="8" fill="#F1F1F1"/>
                         </svg>
                         <div className="modal-body-content">
