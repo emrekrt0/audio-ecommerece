@@ -1210,16 +1210,16 @@ text-align: center;
     width: unset;
   }
   .headerTexts{
-    margin-inline: inherit;
+    margin-inline: unset;
   }
   .headerHeadline h3, .headerHeadline h1, .headerHeadline>p {
     text-align: left;
   }
   .headerHeadline>p {
-    margin-inline: inherit;
+    margin-inline: unset;
   }
   .headerButton{
-    margin-inline: inherit;
+    margin-inline: unset;
   }
   .selectionContent{
     width: 1110px;
