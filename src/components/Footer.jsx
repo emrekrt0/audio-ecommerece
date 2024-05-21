@@ -50,6 +50,14 @@ export default function Footer() {
                                     <a href="#!"><img src={instagram}alt="" srcSet="" /></a>
                                 </div>
                             </div>
+                            <div className="footerSocialsD">
+                                <a href="#!"><img src={facebook} alt="" srcSet="" /></a>
+                                <a href="#!"><img src={twitter} alt="" srcSet="" /></a>
+                                <a href="#!"><img src={instagram}alt="" srcSet="" /></a>
+                            </div>
+                            <div className="footerCopyrightD">
+                                <p>Copyright 2021. All Rights Reserved</p>
+                            </div>
                         </div>
                     </div>
                 </footer>

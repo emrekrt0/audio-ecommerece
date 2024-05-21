@@ -8,6 +8,7 @@ export default function Checkout() {
     }
     return( 
         <>
+        <div className="checkOutWrapper">
             <div className="checkOutItems">
                 <div className="checkOutTop">
                     <div className="checkOutHeader">
@@ -84,6 +85,7 @@ export default function Checkout() {
                 </div>
                     
             </div>
-        </>
+        </div>
+    </>
     )
 }
