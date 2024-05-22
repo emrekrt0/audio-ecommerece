@@ -7,6 +7,12 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 19.12px;
+  letter-spacing: -0.25px;
+  text-align: left;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -73,7 +79,6 @@ a {text-decoration: none; color: inherit;}
   margin-inline: auto;
 }
 .headerHeadline h3 {
-  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
@@ -86,7 +91,6 @@ a {text-decoration: none; color: inherit;}
 .headerHeadline h1 {
   text-align: center;
   margin-inline: auto;
-  font-family: Manrope;
   font-size: 36px;
   font-weight: 700;
   line-height: 40px;
@@ -98,7 +102,6 @@ a {text-decoration: none; color: inherit;}
 .headerHeadline>p {
   text-align: center;
   margin-inline: auto;
-  font-family: Manrope;
   font-size: 15px;
   font-weight: 400;
   line-height: 25px;
@@ -225,19 +228,16 @@ text-align: center;
   margin-inline: auto;
 }
 .bigSpeakerText>h5 {
-  font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
-  /* or 111% */
   text-align: center;
   letter-spacing: 1.28571px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 .bigSpeakerText>p {
-font-family: 'Manrope';
 font-style: normal;
 font-weight: 400;
 font-size: 15px;
@@ -281,7 +281,6 @@ padding: 15px 29.5px 15px 31.5px;
 
 .smallCardsButton p {
 margin: 0;
-font-family: Manrope;
 font-size: 13px;
 font-weight: 700;
 line-height: 17.76px;
@@ -327,7 +326,6 @@ text-align: left;
 }
 
 .smallCardsButtonM p {
-  font-family: Manrope;
   font-size: 13px;
   font-weight: 700;
   line-height: 17.76px;
@@ -404,7 +402,6 @@ footer {
   gap: 48px;
 }
 .footerCopyright {
-  font-family: Manrope;
 font-size: 15px;
 font-weight: 700;
 line-height: 25px;
@@ -454,6 +451,9 @@ opacity: 50%;
 .contentHeader img {
   position: absolute;
   top: 41px;
+  width: 220px;
+  height: 243px;
+  object-fit: scale-down;
 }
 .contentText {
   width: 327px;
@@ -517,14 +517,12 @@ opacity: 50%;
   margin-inline: auto;
 }
 .cartH {
-  font-family: Manrope;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 25px;
-  text-align: left;
+font-size: 15px;
+font-weight: 700;
+line-height: 25px;
+text-align: left;
 }
 .cartPrice {
-font-family: Manrope;
 font-size: 14px;
 font-weight: 700;
 line-height: 25px;
@@ -549,12 +547,15 @@ opacity: 50%;
   background-color: #F1F1F1;
 }
 .pQtyNumb {
-font-family: Manrope;
 font-size: 13px;
 font-weight: 700;
 line-height: 17.76px;
 letter-spacing: 1px;
 text-align: center;
+cursor: pointer;
+}
+.pQtyNumb:hover{
+  color: #D87D4A;
 }
 .checkOutItems {
   background-color: #FAFAFA;
@@ -589,11 +590,10 @@ text-align: center;
 }
 .cOutFormItems {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 9px;
 }
 .cOutFormItems label, .cOutPayment>label {
-  font-family: Manrope;
   font-size: 12px;
   font-weight: 700;
   line-height: 16.39px;
@@ -607,8 +607,13 @@ text-align: center;
   border: 1px solid #CFCFCF;
   border-radius: 8px;
 }
+
+.cOutFormItems input:not([type="radio"]):focus {
+  border: 1px solid #D87D4A;
+  border-radius: 8px;
+  outline: none;
+}
 .cOutFormItems input::placeholder {
-  font-family: Manrope;
   font-size: 14px;
   font-weight: 700;
   line-height: 19.12px;
@@ -858,6 +863,24 @@ text-align: center;
 }
 .footerSocialsD {
     display: none;
+}
+.checkOutTop .checkOutHeader  p {
+  cursor: pointer;
+}
+.cOutFormItems input:focus:invalid ~ label {
+  color: red;
+  display: flex;
+  width: 280px;
+  justify-content: space-between;
+}
+
+.cOutFormItems input:focus:invalid ~ label::after {
+  content: 'Wrong format';
+  color: red;
+  font-weight: 400;
+}
+.cOutFormItems #address:focus:invalid ~ label {
+  width: 280px;
 }
 
 
@@ -1114,6 +1137,7 @@ text-align: center;
   .cartCheckout {
     width: 313px;
   }
+  
   .checkOutItems {
     width: 768px;
     padding-top: 138px;
@@ -1179,6 +1203,12 @@ text-align: center;
   }
   .footerSocialsD {
       display: none;
+  }
+  .contentHeader img {
+    top: 41px;
+  }
+  .cOutFormItems #address:focus:invalid ~ label {
+    width: 643px;
   }
 }
 
@@ -1343,6 +1373,8 @@ text-align: center;
   .footerLinks {
     width: 100%;
     justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
   .footerText{
     width: 540px;
@@ -1355,7 +1387,6 @@ text-align: center;
     display: none;
   }
   .footerCopyrightD {
-    font-family: Manrope;
     font-size: 15px;
     font-weight: 700;
     line-height: 25px;
@@ -1491,6 +1522,60 @@ text-align: center;
   .modal-content{
     padding: 48px;
   }
+  .categoryContainer{
+    width: 1110px;
+    margin-inline: auto;
+    gap: 0%;
+    row-gap: 160px;
+  }
+  .categoryContent{
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    justify-items: end;
+    align-items: center;
+  }
+  .contentText{
+    width: 445px;
+    justify-items: start;
+    height: 343px;
+  }
+  .contentHeader{
+    height: 100%;
+  }
+  .contentHeader img {
+    width: unset;
+    height: unset;
+    top: 96.5px;
+  }
+  .contentText .mBody, .contentText .mH4{
+    text-align: left;
+  }
+  .headerImgBg>svg, .headerImgBg rect {
+    height: 560px;
+  }
+  .categoryContainer .categoryContent:nth-child(2).contentHeader{
+    grid-column: 2;
+  }
+  .categoryContainer .categoryContent:nth-child(2) .contentText{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .categoryContainer .categoryContent:nth-child(2){
+    justify-items: unset;
+  }
+  .cOutFormItems input:not([type="radio"]) label {
+    display: flex;
+    gap: 200px;
+  }
+  .cOutFormItems input:not([type="radio"]) {
+    width: 309px;
+  }
+  .cOutFormItems #address:focus:invalid ~ label {
+    width: 683px;
+  }
+  .cOutFormItems input:focus:invalid ~ label {
+    width: 309px;
+  }
 }
 
 
@@ -1548,28 +1633,24 @@ text-align: center;
 }
 
 .mH1 {
-  font-family: Manrope;
   font-size: 56px;
   font-weight: 700;
   line-height: 58px;
   letter-spacing: 2px;
 }
 .mH2 {
-  font-family: Manrope;
   font-size: 40px;
   font-weight: 700;
   line-height: 44px;
   letter-spacing: 1.4285714626312256px;
 }
 .mH3 {
-  font-family: Manrope;
   font-size: 32px;
   font-weight: 700;
   line-height: 36px;
   letter-spacing: 1.1428571939468384px;
 }
 .mH4{
-  font-family: Manrope;
   font-size: 28px;
   font-weight: 700;
   line-height: 38px;
@@ -1577,7 +1658,6 @@ text-align: center;
   text-transform: uppercase;
 }
 .mH5 {
-  font-family: Manrope;
   font-size: 24px;
   font-weight: 700;
   line-height: 33px;
@@ -1586,28 +1666,24 @@ text-align: center;
 
 }
 .mH6 {
-  font-family: Manrope;
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
   letter-spacing: 1.2857142686843872px;
 }
 .mOverline {
-  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: 10px;
 }
 .mSubTitle {
-  font-family: Manrope;
   font-size: 13px;
   font-weight: 700;
   line-height: 25px;
   letter-spacing: 0.9285714030265808px;
 }
 .mBody {
-  font-family: Manrope;
   font-size: 15px;
   font-weight: 400;
   line-height: 25px;
@@ -1617,7 +1693,6 @@ text-align: center;
 }
 
 .mButton1 {
-  font-family: Manrope;
   font-size: 13px;
   font-weight: 700;
   line-height: 18px;
@@ -1625,12 +1700,12 @@ text-align: center;
   background-color: #D87D4A;
   padding: 15px 0px;
   color: #FFFFFF;
+  cursor: pointer;
 }
 .mButton1:hover {
   background-color: #FBAF85;
 }
 .selectionHeaders {
-  font-family: Manrope;
   font-size: 15px;
   font-weight: 700;
   line-height: 20px;
@@ -1639,14 +1714,12 @@ text-align: center;
   color: #000000;
 }
 .smryNumb {
-  font-family: Manrope;
   font-size: 15px;
   font-weight: 700;
   line-height: 25px;
   opacity: 50%;
 }
 .modalH1 {
-  font-family: Manrope;
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
@@ -1654,7 +1727,6 @@ text-align: center;
   text-align: left;
 }
 .modalSub {
-  font-family: Manrope;
   font-size: 12px;
   font-weight: 700;
   line-height: 16.39px;
@@ -1662,7 +1734,6 @@ text-align: center;
   text-align: left;
 }
 .mButton3 {
-  font-family: Manrope;
   font-size: 13px;
   font-weight: 700;
   line-height: 18px;
@@ -1677,7 +1748,6 @@ text-align: center;
 
 }
 .featuresH5 {
-  font-family: Manrope;
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
@@ -1689,6 +1759,20 @@ text-align: center;
   color: #000;
   opacity: 50%;
 }
+.footerLinks a:hover{
+  color: #D87D4A;
+}
+.footerSocialsD a:hover path, .footerSocials a:hover path {
+  fill: #D87D4A;
+}
+
+.cOutFormItems input:focus:invalid {
+  border: 1px solid red;
+  outline: none;
+}
+
+
+
 .mb32{
   margin-bottom: 32px;
 }

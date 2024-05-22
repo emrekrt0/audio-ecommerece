@@ -19,41 +19,42 @@ export default function Checkout() {
                     <div className="cOutContentTop">
                         <h4 className="mH4 ls-1">CHECKOUT</h4>
                     </div>
+                    
                     <div className="cOutForm">
                         <div className="cOutBilling">
                             <h5 className="mSubTitle txtOrange">BILLING DETAILS</h5>
                             
-                            <div className="cOutFormItems">
-                                <label htmlFor="name">Name</label>
-                                <input type="text" id="name" placeholder="Alexei Ward"/>
-                            </div>
-                            <div className="cOutFormItems">
-                                <label htmlFor="email">Email Address</label>
-                                <input type="email" id="email" placeholder="alexei@mail.com"/>
-                            </div>
-                            <div className="cOutFormItems">
-                                <label htmlFor="phone">Phone Number</label>
-                                <input type="text" id="phone" placeholder="+1 202-555-0136"/>
-                            </div>
+                                <div className="cOutFormItems">
+                                    <input type="text" id="name" placeholder="Alexei Ward" pattern="^[A-Za-z]+(?:\s[A-Za-z]+)+$" required />
+                                    <label htmlFor="name">Name</label>
+                                </div>
+                                <div className="cOutFormItems">
+                                    <input type="email" id="email" placeholder="alexei@mail.com" required />
+                                    <label htmlFor="email">Email Address</label>
+                                </div>
+                                <div className="cOutFormItems">
+                                    <input type="text" id="phone" placeholder="+1 202-555-0136" required />
+                                    <label htmlFor="phone">Phone Number</label>
+                                </div>
                         </div>
                         
                         <div className="cOutShipping">
                             <h5 className="mSubTitle txtOrange">SHIPPING INFO</h5>
                             <div className="cOutFormItems">
+                                <input type="text" id="address" placeholder="1137 Williams Avenue" required/>
                                 <label htmlFor="address">Your Address</label>
-                                <input type="text" id="address" placeholder="1137 Williams Avenue"/>
                             </div>
                             <div className="cOutFormItems">
+                                <input type="number" id="zip" placeholder="10001" required/>
                                 <label htmlFor="zip">ZIP Code</label>
-                                <input type="number" id="zip" placeholder="10001"/>
                             </div>
                             <div className="cOutFormItems">
+                                <input type="text" id="city" placeholder="New York" required/>
                                 <label htmlFor="city">City</label>
-                                <input type="text" id="city" placeholder="New York"/>
                             </div>
                             <div className="cOutFormItems">
+                                <input type="text" id="country" placeholder="United States" required/>
                                 <label htmlFor="country">Country</label>
-                                <input type="text" id="country" placeholder="United States"/>
                             </div>
                         </div>
                         <div className="cOutPayment">
@@ -68,15 +69,16 @@ export default function Checkout() {
                                 <label htmlFor="cash">Cash on Delivery</label>
                             </div>
                             <div className="cOutFormItems">
-                                <label htmlFor="emoneyNumb">e-Money Number</label>
                                 <input type="text" id="emoneyNumb" placeholder="238521993"/>
+                                <label htmlFor="emoneyNumb">e-Money Number</label>
                             </div>
                             <div className="cOutFormItems">
-                                <label htmlFor="emoneyPin">e-Money PIN</label>
                                 <input type="text" id="emoneyPin" placeholder="6891"/>
+                                <label htmlFor="emoneyPin">e-Money PIN</label>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div className="cOutSummary">
                     <div className="cOutPay">
