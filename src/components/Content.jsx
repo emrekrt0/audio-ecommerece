@@ -19,7 +19,7 @@ export function MainPageHeader() {
                 HEADPHONES</h1>
                 <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
                 <div className="headerButton">
-                    <Link to={`/details/xx99-mark-II-headphones-detail`}><p className="mButton1">SEE PRODUCT</p></Link>
+                    <Link to={`/details/xx99-mark-II-headphones-detail`} onClick={scrollToTop}><p className="mButton1">SEE PRODUCT</p></Link>
                 </div>
         </div>
         )
@@ -44,9 +44,9 @@ export default function Container() {
                                 <div className="bigSpeakerText">
                                     <h5 className='bigSpeakerHeader'>ZX9 <br />SPEAKER</h5>
                                     <p className='bigSpeakerSubHeader'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                                    <Link to={'/details/zx-9-speaker-detail'}>
+                                    <Link to={'/details/zx-9-speaker-detail'} onClick={scrollToTop}>
                                         <div className="bigSpeakerButton tac">
-                                                <p className='mButton1 bg-black'  onClick={scrollToTop}>SEE PRODUCT</p>
+                                                <p className='mButton1 bg-black' >SEE PRODUCT</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -61,7 +61,7 @@ export default function Container() {
                         <div className="smallCardsTexts">
                             <h4 className='mH4'>ZX7 SPEAKER</h4>
                         </div>
-                        <Link to={'/details/zx-7-speaker-detail'}>
+                        <Link to={'/details/zx-7-speaker-detail'} onClick={scrollToTop}>
                         <div className="smallCardsButton">
                             <p>SEE PRODUCT</p>
                         </div>
@@ -73,7 +73,7 @@ export default function Container() {
                         </div>
                         <div className="smallCardsTextsM">
                             <h4 className='mH4'>YX1 EARPHONES</h4>
-                            <Link to={'/details/yx1-earphones-detail'}>
+                            <Link to={'/details/yx1-earphones-detail'} onClick={scrollToTop}>
                             <div className="smallCardsButtonM">
                                 <p>SEE PRODUCT</p>
                             </div>
