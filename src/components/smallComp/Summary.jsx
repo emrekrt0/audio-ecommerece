@@ -4,6 +4,7 @@ import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import scrollToTop from './scrollToTop'
 
 export default function Summary() {
     const [modal, setModal] = useState(false)
@@ -70,7 +71,7 @@ export default function Summary() {
                     </div>
                     <div className="modal-footer">
                         <div className="modalBttn">
-                            <Link to={'/home'}><p class="mButton1 tac">BACK TO HOME</p></Link>
+                            <Link to={'/home'}  onClick={scrollToTop}><p class="mButton1 tac">BACK TO HOME</p></Link>
                         </div>
                     </div>
                 </div>

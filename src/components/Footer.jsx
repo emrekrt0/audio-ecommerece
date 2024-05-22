@@ -2,6 +2,8 @@ import footerImg from '../assets/footer/footerImg.jpg';
 import facebook from '../assets/footer/socialIcons/facebook.svg';
 import twitter from '../assets/footer/socialIcons/twitter.svg';
 import instagram from '../assets/footer/socialIcons/instagram.svg';
+import scrollToTop from './smallComp/scrollToTop';
+import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
     return(
@@ -30,10 +32,10 @@ export default function Footer() {
                                 </svg>
                             </div>
                             <div className="footerLinks">
-                                <a href="" className='mSubTitle txtWhite ls-2'>HOME</a>
-                                <a href="" className='mSubTitle txtWhite ls-2'>HEADPHONES</a>
-                                <a href="" className='mSubTitle txtWhite ls-2'>SPEAKERS</a>
-                                <a href="" className='mSubTitle txtWhite ls-2'>EARPHONES</a>
+                                <NavLink to={'/home'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>HOME</NavLink>
+                                <NavLink to={'/headphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>HEADPHONES</NavLink>
+                                <NavLink to={'/speakers'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>SPEAKERS</NavLink>
+                                <NavLink to={'/earphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>EARPHONES</NavLink>
                             </div>
                             <div className="footerText">
                                 <p className='mBody txtWhite'>

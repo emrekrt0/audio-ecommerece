@@ -4,6 +4,7 @@ import hs3 from '../../assets/cart/hs-3.png'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 import { hMenuContext, cartContext } from '../../App';
+import scrollToTop from './scrollToTop';
 
 export default function Cart() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
@@ -112,7 +113,7 @@ export default function Cart() {
                 <h6 className='mH6'>$ 5,396</h6>
             </div>
             <div className="cartCheckout">
-                <NavLink to={'/checkout'}><h1 className='mButton1 tac' onClick={() => setCart(false)}>CHECKOUT</h1></NavLink>
+                <NavLink to={'/checkout'} onClick={scrollToTop}><h1 className='mButton1 tac' onClick={() => setCart(false) }>CHECKOUT</h1></NavLink>
             </div>
         </div>
        </>
