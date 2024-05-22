@@ -2,6 +2,7 @@ import ss1 from '../assets/categoryImgs/speakers/ss1.png';
 import ss2 from '../assets/categoryImgs/speakers/ss2.png';
 import { Link } from 'react-router-dom';
 import FirstComp from './smallComp/FirstComp';
+import scrollToTop from './smallComp/scrollToTop';
 
 
 

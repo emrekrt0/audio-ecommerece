@@ -695,6 +695,8 @@ cursor: pointer;
 }
 .productDetail .productDetailTopImg img {
   position: absolute;
+  width: 220px;
+  height: 243px;
 }
 .productDetailTopImg .bckgrnd>svg , .productDetailTopImg .bckgrnd rect {
   width: 327px;

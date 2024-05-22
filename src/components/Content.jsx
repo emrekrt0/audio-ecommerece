@@ -9,6 +9,7 @@ import yx1earphones from '../assets/carts/yx1earphones-tablet.svg';
 import FirstComp from './smallComp/FirstComp';
 import zx9tablet from '../static/main-zx9tablet.svg';
 import { Link } from 'react-router-dom';
+import scrollToTop from './smallComp/scrollToTop';
 
 export function MainPageHeader() {
     return (
@@ -45,7 +46,7 @@ export default function Container() {
                                     <p className='bigSpeakerSubHeader'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                                     <Link to={'/details/zx-9-speaker-detail'}>
                                         <div className="bigSpeakerButton tac">
-                                                <p className='mButton1 bg-black'>SEE PRODUCT</p>
+                                                <p className='mButton1 bg-black'  onClick={scrollToTop}>SEE PRODUCT</p>
                                         </div>
                                     </Link>
                                 </div>
