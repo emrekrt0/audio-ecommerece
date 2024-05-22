@@ -698,6 +698,9 @@ cursor: pointer;
   width: 220px;
   height: 243px;
 }
+.cartRmvBtn {
+  cursor: pointer;
+}
 .productDetailTopImg .bckgrnd>svg , .productDetailTopImg .bckgrnd rect {
   width: 327px;
   height: 327px;
