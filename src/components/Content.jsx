@@ -10,6 +10,8 @@ import FirstComp from './smallComp/FirstComp';
 import zx9tablet from '../static/main-zx9tablet.svg';
 import { Link } from 'react-router-dom';
 import scrollToTop from './smallComp/scrollToTop';
+import supabase from './smallComp/Supabase';
+import { useState, useEffect } from 'react';
 
 export function MainPageHeader() {
     return (
@@ -23,14 +25,37 @@ export function MainPageHeader() {
                 </div>
         </div>
         )
-    }
+}
 
 export default function Container() {
+    const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const {data, error } = await supabase
+        .from('products')
+        .select('*');
+        if (!error) {
+          setProducts(data);
+        } else {
+          console.error('Error fetching products:', error);
+        }
+      } catch (error) {
+        console.log('Error:', error);
+      }
+    }
+    
+    getProducts();
+  }, []); // Empty dependency array ensures this runs once when the component mounts
+
+  console.log(products);
+    
+    
     function MainPageContent() {
+        
         return(
             <>
-            
             <div className="containerWrapper">
                 <FirstComp />
                 <div className="productsContainer">
