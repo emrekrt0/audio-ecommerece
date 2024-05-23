@@ -44,9 +44,9 @@ export default function ProductDetail() {
     console.log(product);
     return (
         <>
-            {product ? product.map((product) => (
-                <>
-                    <div className="productDetailContainer">
+            {product ? product.map((product, index) => (
+                <React.Fragment key={index}>
+                    <div  className="productDetailContainer">
                     <div className="goBckBtn" onClick={handleGoBack}>
                         <p className="mBody tal">Go Back</p>
                     </div>
@@ -93,10 +93,10 @@ export default function ProductDetail() {
                             <div className="productFeatures">
                                 <h5 className="featuresH5">FEATURES</h5>
                                 {product.features_text.en.map((feature, index) => (
-                                    <>
-                                    <p className="mBody tal" key={index[0]}>{feature[0]}</p>
-                                    <p className="mBody tal" key={index[1]}>{feature[1]}</p>
-                                    </>
+                                    <React.Fragment key={index}>
+                                    <p className="mBody tal">{feature[0]}</p>
+                                    <p className="mBody tal">{feature[1]}</p>
+                                    </React.Fragment>
                                 ))}
                             </div>
                             <div className="productInTheBox">
@@ -125,7 +125,7 @@ export default function ProductDetail() {
                     <div className="containerWrapper">
                         <FirstComp />
                     </div>
-                </>
+                </React.Fragment>
                 
             )) : 'Loading...'}
         </>

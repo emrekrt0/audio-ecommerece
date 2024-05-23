@@ -13,7 +13,7 @@ const YouMayAlsoLike = ({ category, currentProductSlug }) => {
                 .select('*')
                 .order('id', { ascending: true })
                 .neq('slug', currentProductSlug)
-                .eq('category->>en', category)
+                .eq('category',JSON.stringify({en: category}))
                 .limit(3)
             
             if (error) {
@@ -44,7 +44,7 @@ const YouMayAlsoLike = ({ category, currentProductSlug }) => {
         fetchProducts();
     }, [category, currentProductSlug]);
     console.log(products);
-    return (
+return (
         <>
             <h5 className='featuresH5'>YOU MAY ALSO LIKE</h5 >
             <div className='ymayLikeContainer'>
@@ -61,8 +61,8 @@ const YouMayAlsoLike = ({ category, currentProductSlug }) => {
                     </div>
                     <h5 className='mH5 tac'>{product.title} {product.title.length <=8 && 
                     product.title !== 'XX59' && product.category.en}</h5>
-                    <div class="contentButton">
-                        <Link to={`/details/${product.slug}`} onClick={scrollToTop}><p class="mButton1 tac">SEE PRODUCT</p></Link>
+                    <div className="contentButton">
+                        <Link to={`/details/${product.slug}`} onClick={scrollToTop}><p className="mButton1 tac">SEE PRODUCT</p></Link>
                     </div>
                 </div>
             ))): 'Loading...'}
