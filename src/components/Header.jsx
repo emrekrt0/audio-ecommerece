@@ -1,20 +1,40 @@
 // import Bitmap from '../static/Bitmap.svg';
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import Navbar from './smallComp/Navbar';
 import hBackGround from '../static/Bitmap.svg'
 import hBackGroundTablet from '../static/BitmapTablet.svg'
 import hBackGroundDesktop from '../static/BitmapDesktop.svg'
 import { MainPageHeader } from './Content';
 import { useNavigate, useLocation, NavLink } from 'react-router-dom';
-import { hMenuContext, cartContext } from '../App';
+import { hMenuContext, cartContext, langContext } from '../App';
 import Cart from './smallComp/Cart';
 import scrollToTop from './smallComp/scrollToTop';
+import supabase from './smallComp/Supabase';
 
 export default function Header() {
+    const [catNames, setCatNames] = useState([])
     const location = useLocation();
     const navigate = useNavigate();
     const {hamMenu ,setHamMenu} = useContext(hMenuContext);
     const {cart, setCart} = useContext(cartContext);
+    const { lang } = useContext(langContext);
+    console.log(lang);
+    
+    useEffect(() => {
+        getCategoryName();
+    }, [])
+
+    async function getCategoryName() {
+        const {data, error} = await supabase
+        .from('products')
+        .select(`category`, {distinct: true})
+        if (error) {
+            console.log(error)
+        }
+        else {
+            setCatNames(data)
+        } 
+    }
 
     function handleBackdropClick() {
         setCart(false)
@@ -29,7 +49,10 @@ export default function Header() {
         setCart(!cart);
         console.log(cart, 'cart');
     }   
-    
+
+    console.log(catNames);
+    const uniqueCatNames = [...new Set(catNames.map(cat => cat.category[lang]))];
+    console.log(uniqueCatNames, 'uniqueCatNames');
     return (
         <>  
            {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
@@ -61,10 +84,12 @@ export default function Header() {
                             </div>
                         </div>
                         <div className="top-navbar">
-                                    <NavLink to={'/home'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>HOME</NavLink>
-                                    <NavLink to={'/categories/Headphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>HEADPHONES</NavLink>
-                                    <NavLink to={'/categories/Speakers'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>SPEAKERS</NavLink>
-                                    <NavLink to={'/categories/Earphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>EARPHONES</NavLink>
+                            <NavLink to={'/home'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>{lang === 'en' ? 'HOME' : 'ANASAYFA'}</NavLink>
+                            {uniqueCatNames && uniqueCatNames.map((cat,index) => (
+                                cat.category !== cat.category+1 && (
+                                    <NavLink to={`/categories/${cat}`} key={index} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>{cat.toUpperCase()}</NavLink>
+                                )
+                            ))}
                         </div>
                         <div className="headerCart" onClick={openCart}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">

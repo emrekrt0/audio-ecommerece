@@ -1,12 +1,14 @@
-import React, {useState,useEffect}from 'react';
+import React, {useState,useEffect,useContext}from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import supabase from './smallComp/Supabase';
 import FirstComp from './smallComp/FirstComp';
+import { langContext } from '../App';
 
 export default function Categories() {
     const params = useParams();
     const [category, setCategory] = useState();
+    const {lang} = useContext(langContext)
 
     useEffect(() => {
         getCategories();
@@ -19,12 +21,11 @@ export default function Categories() {
         .from('products')
         .select('*')
         .order('id', {ascending: true})
-        .eq('category->>en',params.category)
+        .ilike(`category->>${lang}`,`%${params.category}%`)
         if (error) {
             console.log(error)
         }
         else {
-            console.log(data)
             setCategory(data)
         }
         } catch(error) {
@@ -51,13 +52,13 @@ export default function Categories() {
                             <img src={product.image} />
                         </div>
                         <div className="contentText">
-                            {product.new && <p className='mOverline txtOrange'>NEW PRODUCT</p>}
-                            <h4 className='mH4 ls-1'>{product.title} {product.category.en}</h4>
+                            {product.new && <p className='mOverline txtOrange'>{lang === 'en' ? 'NEW PRODUCT' : 'YENI URUN'}</p>}
+                            <h4 className='mH4 ls-1'>{product.title} {product.category[lang]}</h4>
                             <p className='mBody'>
-                                {product.description.en}
+                                {product.description[lang]}
                             </p>
                             <div className="contentButton">
-                                <Link to={`/details/${product.slug}`}><p className='mButton1 tac'>SEE PRODUCT</p></Link>
+                                <Link to={`/details/${product.slug}`}><p className='mButton1 tac'>{lang === 'en' ? 'SEE PRODUCT' : 'ÜRUNÜ GÖR'}</p></Link>
                             </div>
                         </div>
                     </div>

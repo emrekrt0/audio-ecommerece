@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import bigSpeaker from '../assets/bigProductSelection/bigSpeaker.png';
 import zx7speaker from '../assets/carts/zx7speaker-desktop.svg';
@@ -9,6 +9,7 @@ import zx9tablet from '../static/main-zx9tablet.svg';
 import zx9pc from '../static/main-zx9pc.svg';
 import scrollToTop from './smallComp/scrollToTop';
 import supabase from './smallComp/Supabase';
+import { langContext } from '../App';
 
 export function MainPageHeader() {
     return (
@@ -26,6 +27,7 @@ export function MainPageHeader() {
 
 export default function Container() {
     const [products, setProducts] = useState([]);
+    const { lang } = useContext(langContext);
 
   useEffect(() => {
     async function getProducts() {
