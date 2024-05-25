@@ -41,9 +41,7 @@ a {text-decoration: none; color: inherit;}
 .headerBackground img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  content: url('./static/Bitmap.svg');
-  
+  object-fit: cover;  
 }
 .headerTop {
   display: flex;
@@ -197,10 +195,6 @@ text-align: center;
   position: relative;
   display: grid;
   justify-items: center;
-}
-.bigSpeaker>img {
-  content: url('./static/main-zx9mobil.svg');
-
 }
 .bigSpeaker-content {
   width: 100%;
@@ -903,9 +897,6 @@ cursor: pointer;
   .headerBackground {
     height: 100%;
   }
-  .headerBackground img {
-    content: url('./static/BitmapTablet.svg');
-  }
   .headerTop{
     width: 768px;
   }
@@ -953,11 +944,7 @@ cursor: pointer;
   }
   .selectionProduct{
     width: 223px;
-  }
-  .bigSpeaker>img {
-    content: url('./static/main-zx9tablet.svg');
-  }
-  
+  }  
   .bigSpeaker-content {
     padding-top: 52px;
     gap: 64px;
@@ -1133,6 +1120,7 @@ cursor: pointer;
   .ymayLikeContent .ymayLikeImg>img {
     width: 148.31px;
     height: 193px;
+    object-fit: contain;
   }
   .cartContainer {
     margin-inline: auto 40px;
@@ -1223,9 +1211,6 @@ cursor: pointer;
   .headerBackground {
     width: 100%;
   }
-  .headerBackground img {
-    content: url('./static/BitmapDesktop.svg');
-  }
   .headerTop{
     width: 1110px;
   }
@@ -1286,9 +1271,6 @@ cursor: pointer;
     font-size: 18px;
     line-height: 24.59px;
     letter-spacing: 1.29px;
-  }
-  .bigSpeaker>img {
-    content: url(/src/static/main-zx9pc.svg);
   }
   .bigSpeaker-content {
     padding-top: 96px;

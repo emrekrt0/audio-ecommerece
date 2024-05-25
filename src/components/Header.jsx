@@ -34,7 +34,13 @@ export default function Header() {
         <>  
            {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
             <header className={`headerBackground ${location.pathname === '/home' ? '' : 'h90 bg-black'}`}>
-                {location.pathname === '/home' ? <img alt="" /> : null}
+            {location.pathname === '/home' ? 
+                    <picture>
+                        <source media="(min-width: 1440px)" srcSet={hBackGroundDesktop} />
+                        <source media="(min-width: 768px)" srcSet={hBackGroundTablet} />
+                        <img src={hBackGround} alt="" />
+                    </picture>
+                : null}
                 <div className={`headerTop ${hamMenu ? 'gap0' : ''}`}>
                     <div className="headerTopItems">
                         <div className="headerItems">
@@ -56,9 +62,9 @@ export default function Header() {
                         </div>
                         <div className="top-navbar">
                                     <NavLink to={'/home'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>HOME</NavLink>
-                                    <NavLink to={'/headphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>HEADPHONES</NavLink>
-                                    <NavLink to={'/speakers'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>SPEAKERS</NavLink>
-                                    <NavLink to={'/earphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>EARPHONES</NavLink>
+                                    <NavLink to={'/categories/Headphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>HEADPHONES</NavLink>
+                                    <NavLink to={'/categories/Speakers'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>SPEAKERS</NavLink>
+                                    <NavLink to={'/categories/Earphones'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>EARPHONES</NavLink>
                         </div>
                         <div className="headerCart" onClick={openCart}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20" viewBox="0 0 23 20" fill="none">

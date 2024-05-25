@@ -1,17 +1,14 @@
-import headphoneImage from '../assets/productselection/headphoneImage.svg';
-import speakerImage from '../assets/productselection/speakerImage.svg';
-import earphoneImage from '../assets/productselection/earphoneImage.svg';
-import oval from '../assets/productselection/oval.svg';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import bigSpeaker from '../assets/bigProductSelection/bigSpeaker.png';
-import Group6 from '../assets/productselection/Group6.svg';
 import zx7speaker from '../assets/carts/zx7speaker-desktop.svg';
 import yx1earphones from '../assets/carts/yx1earphones-tablet.svg';
 import FirstComp from './smallComp/FirstComp';
+import zx9mobile from '../static/main-zx9mobil.svg';
 import zx9tablet from '../static/main-zx9tablet.svg';
-import { Link } from 'react-router-dom';
+import zx9pc from '../static/main-zx9pc.svg';
 import scrollToTop from './smallComp/scrollToTop';
 import supabase from './smallComp/Supabase';
-import { useState, useEffect } from 'react';
 
 export function MainPageHeader() {
     return (
@@ -61,7 +58,11 @@ export default function Container() {
                 <div className="productsContainer">
                     <div className="bigProduct">
                         <div className="bigSpeaker">
-                            <img alt="" />
+                            <picture>
+                                <source media="(min-width: 1440px)" srcSet={zx9pc} />
+                                <source media="(min-width: 768px)" srcSet={zx9tablet} />
+                                <img src={zx9mobile} alt="" />
+                            </picture>
                             <div className="bigSpeaker-content">
                                 <div className="bigSpeakerImg">
                                     <img src={bigSpeaker} alt="" />
