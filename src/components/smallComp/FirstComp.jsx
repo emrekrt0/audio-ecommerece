@@ -4,14 +4,13 @@ import speakerImage from '../../assets/productselection/speakerImage.png';
 import earphoneImage from '../../assets/productselection/earphoneImage.png';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import { hMenuContext } from '../../App';
+import { hMenuContext, langContext } from '../../App';
 import scrollToTop from './scrollToTop';
 
 export default function FirstComp() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
-
+    const {lang} = useContext(langContext)
     
-
     function toggleHamMenu() {
         setHamMenu(false)
         console.log(hamMenu, 'hamMenu firstcomp');
@@ -24,9 +23,9 @@ export default function FirstComp() {
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
-                                <h5 className='selectionHeaders'>HEADPHONES</h5>
+                                <h5 className='selectionHeaders'>{lang === 'en' ? 'HEADPHONES' : 'KULAKLIK'}</h5>
                                 <div className="button3">
-                                    <NavLink to={'/categories/Headphones'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>SHOP</h5></NavLink>
+                                    <NavLink to={'/categories/Headphones'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>{lang==='en' ? 'SHOP' : 'GÖRÜNTÜLE'}</h5></NavLink>
                                     <svg width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" strokeWidth="2"/>
                                     </svg>
@@ -55,9 +54,9 @@ export default function FirstComp() {
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
-                                <h5 className='selectionHeaders'>SPEAKERS</h5>
+                                <h5 className='selectionHeaders'>{lang==='en' ? 'SPEAKERS' : 'HOPARLÖR'}</h5>
                                 <div className="button3">
-                                    <NavLink to={'/categories/Speakers'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>SHOP</h5></NavLink>
+                                    <NavLink to={'/categories/Speakers'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>{lang==='en' ? 'SHOP' : 'GÖRÜNTÜLE'}</h5></NavLink>
                                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" strokeWidth="2"/>
                                     </svg>
@@ -86,9 +85,9 @@ export default function FirstComp() {
                                 <rect width="327" height="165" rx="8" fill="#F1F1F1"/>
                             </svg>
                             <div className="selectionTexts">
-                                <h5 className='selectionHeaders'>EARPHONES</h5>
+                                <h5 className='selectionHeaders'>{lang === 'en' ? 'EARPHONES' : 'KABLOSUZ KULAKLIK'}</h5>
                                 <div className="button3">
-                                    <NavLink to={'/categories/Earphones'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>SHOP</h5></NavLink>
+                                    <NavLink to={'/categories/Earphones'} onClick={() => {toggleHamMenu(); scrollToTop()}}><h5 className='mButton3'>{lang==='en' ? 'SHOP' : 'GÖRÜNTÜLE'}</h5></NavLink>
                                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path   d="M1.32178 1L6.32178 6L1.32178 11" stroke="#D87D4A" strokeWidth="2"/>
                                     </svg>

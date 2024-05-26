@@ -1,12 +1,19 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import { langContext } from "../../App";
 import translatelogo from '../../static/translatelogo.svg'
 
 export default function SelectLang() {
     const [languageBox, setLanguageBox] = useState(true)
     const {lang, setLang} = useContext(langContext)
+
+    useEffect(() => {
+        if (localStorage.getItem('languageSelected')) {
+            setLanguageBox(false);
+        }
+    }, []);
     
     function handleLangClick() {
+        localStorage.setItem('languageSelected', true )
         setLanguageBox(!languageBox)
     }
 
@@ -15,17 +22,12 @@ export default function SelectLang() {
         {languageBox ? 
         <div className='selectLang'>
             <div className="selectLangItems">
-                <div className='selectLangHeader'>
-                    <h4>
-                    {lang === 'en' ? 'Diliniz İngilizce olarak ayarlanmıştır. Değiştirmek isterseniz lütfen dilinizi seçiniz.' : 'Your language is set to Turkish. If you want to change it, please select your language.'}
-                    </h4>
-                    <div className="langClose">
-                        <h4 className='langCloseBtn'onClick={handleLangClick}>X</h4>
-                    </div>
+                <div className="langClsBtn">
+                    <h4 className='langCloseBtnH4'onClick={handleLangClick}>X</h4>
                 </div>
-                <h5 className='selectLangText'>
-                    {lang === 'en' ? 'Dilinizi seçiniz' : 'Select your language'}
-                </h5>
+                <h4 className="langHeader4">
+                {lang === 'en' ? 'Diliniz İngilizce olarak ayarlanmıştır. Değiştirmek isterseniz lütfen tercih ettiğiniz dilinizi seçiniz.' : 'Your language is set to Turkish. If you want to change it, please select your preferred language.'}
+                </h4>
                 <div className='langButtons'>
                     <button onClick={() => {setLang('en'); handleLangClick()}} className='mButton1 bg-white'>EN</button>
                     <button onClick={() => {setLang('tr'); 

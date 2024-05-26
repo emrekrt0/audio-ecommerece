@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import supabase from './Supabase';
 import scrollToTop  from './scrollToTop';
+import { langContext } from '../../App';
 
 const YouMayAlsoLike = ({ category, currentProductSlug }) => {
     const [products, setProducts] = useState([]);
+    const { lang } = React.useContext(langContext);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -46,7 +48,9 @@ const YouMayAlsoLike = ({ category, currentProductSlug }) => {
     console.log(products);
 return (
         <>
-            <h5 className='featuresH5'>YOU MAY ALSO LIKE</h5 >
+            <h5 className='featuresH5'>
+                {lang === 'en' ? 'YOU MAY ALSO LIKE' : 'SİZİN İÇİN ÖNERİLENLER'}
+            </h5 >
             <div className='ymayLikeContainer'>
             {products.length > 0 ? (
                 products.map((product) => (
@@ -60,9 +64,9 @@ return (
                         <img src={product.image} alt={product.title} />
                     </div>
                     <h5 className='mH5 tac'>{product.title} {product.title.length <=8 && 
-                    product.title !== 'XX59' && product.category.en}</h5>
+                    product.title !== 'XX59' && product.category[lang]}</h5>
                     <div className="contentButton">
-                        <Link to={`/details/${product.slug}`} onClick={scrollToTop}><p className="mButton1 tac">SEE PRODUCT</p></Link>
+                        <Link to={`/details/${product.slug}`} onClick={scrollToTop}><p className="mButton1 tac">{lang === 'en' ? 'SEE PRODUCT' : 'ÜRÜNE GİT'}</p></Link>
                     </div>
                 </div>
             ))): 'Loading...'}

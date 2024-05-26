@@ -12,14 +12,15 @@ import supabase from './smallComp/Supabase';
 import { langContext } from '../App';
 
 export function MainPageHeader() {
+    const { lang } = useContext(langContext);
     return (
         <div className="headerHeadline">
-                <h3>NEW PRODUCT</h3>
+                <h3>{lang==='en' ? 'NEW PRODUCT' : 'YENİ ÜRÜN'}</h3>
                 <h1>XX99 MARK II
-                HEADPHONES</h1>
-                <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
+                {lang==='en' ? ' HEADPHONES' : ' KULAKLIK'}</h1>
+                <p>{lang==='en' ? 'Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.' : 'Tutkulu müzik tutkunları için doğal, gerçeğe yakın ses ve olağanüstü yapım kalitesini deneyimleyin.'}</p>
                 <div className="headerButton">
-                    <Link to={`/details/xx99-mark-II-headphones-detail`} onClick={scrollToTop}><p className="mButton1">SEE PRODUCT</p></Link>
+                    <Link to={`/details/xx99-mark-II-headphones-detail`} onClick={scrollToTop}><p className="mButton1">{lang==='en' ? 'SEE PRODUCT' : 'ÜRÜNÜ GÖR'}</p></Link>
                 </div>
         </div>
         )

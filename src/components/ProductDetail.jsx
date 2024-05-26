@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import FirstComp from "./smallComp/FirstComp";
 import YouMayAlsoLike from "./smallComp/YouMayAlsoLike";
 import {useNavigate} from 'react-router-dom';
 import supabase from "./smallComp/Supabase";
+import { langContext } from "../App";
 
 export default function ProductDetail() {
     const [product,setProduct] = useState();
     const navigate = useNavigate();
     const { slug } = useParams();
+    const {lang} = useContext(langContext);
 
     function handleGoBack() {
         navigate(-1);
@@ -62,12 +64,14 @@ export default function ProductDetail() {
                             </div>
                             <div className="productDetail-Texts-Cart">
                                 <div className="productDetailTexts">
-                                    {product.new && <div className="newProduct mOverline txtOrange"><p>NEW PRODUCT</p></div>}
+                                    {product.new && <div className="newProduct mOverline txtOrange"><p>
+                                        {lang === 'en' ? 'NEW PRODUCT' : 'YENİ ÜRÜN'}
+                                        </p></div>}
                                     <div className="productHeadline">
-                                        <h4 className="mH4 ls-1">{product.title} {product.category.en}</h4>
+                                        <h4 className="mH4 ls-1">{product.title} {product.category[lang]}</h4>
                                     </div>
                                     <div className="productText">
-                                        <p className="mBody tal">{product.description.en}</p>
+                                        <p className="mBody tal">{product.description[lang]}</p>
                                     </div>
                                     <div className="productPrice">
                                         <h6 className="mH6">{product.price}</h6>
@@ -85,14 +89,18 @@ export default function ProductDetail() {
                                         </div>
                                     </div>
                                     <div className="productButton">
-                                        <p className="mButton1 w160h48 tac">ADD TO CART</p>
+                                        <p className="mButton1 w160h48 tac">
+                                            {lang === 'en' ? 'ADD TO CART' : 'SEPETE EKLE'}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                             <div className="productFeatures">
-                                <h5 className="featuresH5">FEATURES</h5>
-                                {product.features_text.en.map((feature, index) => (
+                                <h5 className="featuresH5">
+                                    {lang === 'en' ? 'FEATURES' : 'ÖZELLİKLER'}
+                                </h5>
+                                {product.features_text[lang].map((feature, index) => (
                                     <React.Fragment key={index}>
                                     <p className="mBody tal">{feature[0]}</p>
                                     <p className="mBody tal">{feature[1]}</p>
@@ -100,9 +108,11 @@ export default function ProductDetail() {
                                 ))}
                             </div>
                             <div className="productInTheBox">
-                                <h5 className="featuresH5">IN THE BOX</h5>
+                                <h5 className="featuresH5">
+                                    {lang === 'en' ? 'IN THE BOX' : 'KUTU İÇERİĞİ'}
+                                </h5>
                                 <div className="inTheBox">
-                                    {product.in_the_box.en.map((item, index) => (
+                                    {product.in_the_box[lang].map((item, index) => (
                                         <div key={index} className="inTheBoxItem">
                                             <h5 className="mSubTitle fs15 txtOrange">{item[0]}</h5>
                                             <p className="mBody tal">{item[1]}</p>

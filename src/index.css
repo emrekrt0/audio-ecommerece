@@ -883,7 +883,93 @@ cursor: pointer;
   width: 280px;
 }
 
-
+.selectLang {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 3;
+}
+.selectLangItems {
+  margin-inline: auto;
+  width: 327px;
+  height: 140px;
+  background-color: #D87D4A;
+  color: #000;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0px 0px 29px 5px rgba(0, 0, 0, 0.75);
+  display: grid;
+  justify-items: center;
+}
+.langButtons {
+  display: flex;
+  gap: 32px;
+}
+.selectLangHeader {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  justify-content: end;
+}
+.langButtons>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 40px;
+  border: none;
+  color: #000;
+}
+.selectLangFixed {
+  position: fixed;
+  top: 720px;
+}
+.selectLangFixedItem>button{
+  background-color: #D87D4A;
+  width: 55px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.15);
+  color: #FFFFFF;
+  border: none;
+  position: absolute;
+  left: -30px;
+  display: flex;
+  align-items: center;
+}
+.selectLangFixedItem>button img {
+  width: 45px;
+  height: 40px;
+}
+.selectLangFixedItem>button:hover {
+  left: 5px;
+  width: 120px;
+  height: 60px;
+  border-radius: 60px;
+}
+.selectLangFixedItem>button:hover img {
+  width: 35px;
+  height: 35px;
+}
+.selectLangFixedItem>button:is(:not(:hover))  .selectLangFixedTest{
+  display: none;
+}
+.langCloseBtnH4 {
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 8px 8px;
+}
+.langCloseBtnH4:hover {
+  background-color: #FBAF85;
+  border-radius: 50%;
+}
+.langClsBtn{
+  margin-inline: auto 15px;
+}
+.langHeader4 {
+  font-size: 12px;
+  padding: 5px 5px;
+  text-align: center;
+}
 
 /* .headerBackground img {
   content: url('./static/Bitmap.svg');
@@ -1204,6 +1290,9 @@ cursor: pointer;
   }
   .cOutFormItems #address:focus:invalid ~ label {
     width: 643px;
+  }
+  .selectLangItems {
+    width: 689px;
   }
 }
 
@@ -1572,43 +1661,20 @@ cursor: pointer;
     z-index: 3;
   }
   .selectLangItems {
-    margin-inline: auto;
     width: 1110px;
     height: 123px;
-    background-color: #D87D4A;
-    color: #000;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75);
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    align-content: space-evenly;
-    
   }
-  .langButtons {
-    display: flex;
-    gap: 32px;
+  .langHeader4{
+    font-size: unset;
+    padding: unset;
   }
   .selectLangHeader {
     display: grid;
     grid-template-columns: max-content max-content;
-    width: 1110px;
     justify-content: end;
-    gap: 20%;
-  }
-  .langButtons>button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 40px;
-    border: none;
-    color: #000;
   }
   .selectLangFixed {
-    position: fixed;
-    top: 800px;
+    top: 760px;
   }
   .selectLangFixedItem>button{
     background-color: #D87D4A;
@@ -1640,11 +1706,16 @@ cursor: pointer;
   .selectLangFixedItem>button:is(:not(:hover))  .selectLangFixedTest{
     display: none;
   }
-  .langCloseBtn {
+  .langCloseBtnH4 {
+    padding: 10px 15px;
+  }
+  .langCloseBtnH4:hover {
+    background-color: #FBAF85;
     border-radius: 50%;
-    color: #FFFFFF;
-    cursor: pointer;
-    margin-right: 40px;
+  }
+
+  .langClsBtn{
+    margin-inline: auto 30px;
   }
 }
 @media (max-height: 800px ){
