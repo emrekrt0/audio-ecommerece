@@ -27,7 +27,7 @@ export default function Header() {
     async function getCategoryName() {
         const {data, error} = await supabase
         .from('products')
-        .select(`category`, {distinct: true})
+        .select(`category_link,category`, {distinct: true})
         if (error) {
             console.log(error)
         }
@@ -50,9 +50,15 @@ export default function Header() {
         console.log(cart, 'cart');
     }   
 
-    console.log(catNames);
-    const uniqueCatNames = [...new Set(catNames.map(cat => cat.category[lang]))];
-    console.log(uniqueCatNames, 'uniqueCatNames');
+    console.log(catNames, 'catnames');
+
+    
+
+   const uniqueCatLinks = Array.from(
+    new Set(catNames.map(cat => JSON.stringify([cat.category_link, cat.category[lang]])))
+    ).map(item => JSON.parse(item));
+    console.log(uniqueCatLinks, 'uniqueCatLinks');
+    
     return (
         <>  
            {hamMenu && <div className='backdrop' onClick={handleBackdropClick}></div>}
@@ -85,9 +91,9 @@ export default function Header() {
                         </div>
                         <div className="top-navbar">
                             <NavLink to={'/home'} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>{lang === 'en' ? 'HOME' : 'ANASAYFA'}</NavLink>
-                            {uniqueCatNames && uniqueCatNames.map((cat,index) => (
-                                cat.category !== cat.category+1 && (
-                                    <NavLink to={`/categories/${cat}`} key={index} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>{cat.toUpperCase()}</NavLink>
+                            {uniqueCatLinks && uniqueCatLinks.map((cat,index) => (
+                                cat !== cat+1 && (
+                                    <NavLink to={`/categories/${cat[0]}`} key={index} className='mSubTitle txtWhite ls-2'  onClick={scrollToTop}>{cat[1].toUpperCase()}</NavLink>
                                 )
                             ))}
                         </div>

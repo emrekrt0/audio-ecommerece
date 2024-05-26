@@ -12,7 +12,7 @@ export default function Categories() {
 
     useEffect(() => {
         getCategories();
-    }, [params.category])
+    }, [params.category_link, lang])
     
     console.log(params);
     async function getCategories() {
@@ -21,7 +21,7 @@ export default function Categories() {
         .from('products')
         .select('*')
         .order('id', {ascending: true})
-        .ilike(`category->>${lang}`,`%${params.category}%`)
+        .ilike(`category_link`,`%${params.category_link}%`)
         if (error) {
             console.log(error)
         }
@@ -33,12 +33,19 @@ export default function Categories() {
         }
 
     }
+    console.log(category, 'category');
+
+    let categoryNames = '';
+    if(category) {
+        categoryNames = category[0].category[lang];
+        console.log(categoryNames, 'categoryNames');
+    }
 
     return(
         <>
                 <div className="categoryItems">
                 <div className="categoryHeader">
-                    <h4 className="mH4 txtWhite">{params.category}</h4>
+                    <h4 className="mH4 txtWhite">{categoryNames}</h4>
                 </div>
                 <div className='categoryContainer'>
                 {category && category.map((product) => (

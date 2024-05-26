@@ -884,6 +884,7 @@ cursor: pointer;
 }
 
 
+
 /* .headerBackground img {
   content: url('./static/Bitmap.svg');
 } */
@@ -1563,6 +1564,87 @@ cursor: pointer;
   }
   .cOutFormItems input:focus:invalid ~ label {
     width: 309px;
+  }
+  .selectLang {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+  }
+  .selectLangItems {
+    margin-inline: auto;
+    width: 1110px;
+    height: 123px;
+    background-color: #D87D4A;
+    color: #000;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    align-content: space-evenly;
+    
+  }
+  .langButtons {
+    display: flex;
+    gap: 32px;
+  }
+  .selectLangHeader {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    width: 1110px;
+    justify-content: end;
+    gap: 20%;
+  }
+  .langButtons>button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border: none;
+    color: #000;
+  }
+  .selectLangFixed {
+    position: fixed;
+    top: 800px;
+  }
+  .selectLangFixedItem>button{
+    background-color: #D87D4A;
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.15);
+    color: #FFFFFF;
+    border: none;
+    position: absolute;
+    left: -30px;
+    display: flex;
+    align-items: center;
+  }
+  .selectLangFixedItem>button img {
+    width: 45px;
+    height: 40px;
+  }
+  .selectLangFixedItem>button:hover {
+    left: 5px;
+    width: 120px;
+    height: 60px;
+    border-radius: 60px;
+  }
+  .selectLangFixedItem>button:hover img {
+    width: 35px;
+    height: 35px;
+  }
+  .selectLangFixedItem>button:is(:not(:hover))  .selectLangFixedTest{
+    display: none;
+  }
+  .langCloseBtn {
+    border-radius: 50%;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-right: 40px;
   }
 }
 @media (max-height: 800px ){
