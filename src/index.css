@@ -921,7 +921,7 @@ cursor: pointer;
 }
 .selectLangFixed {
   position: fixed;
-  top: 720px;
+  top: 620px;
 }
 .selectLangFixedItem>button{
   background-color: #D87D4A;
