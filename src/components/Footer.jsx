@@ -4,8 +4,11 @@ import twitter from '../assets/footer/socialIcons/twitter.svg';
 import instagram from '../assets/footer/socialIcons/instagram.svg';
 import scrollToTop from './smallComp/scrollToTop';
 import { NavLink } from 'react-router-dom';
+import { langContext } from '../App';
+import { useContext } from 'react';
 
 export default function Footer() {
+    const {lang} = useContext(langContext)
     return(
         <footer>
                 {location.pathname !== '/checkout' ?  
@@ -15,10 +18,14 @@ export default function Footer() {
                         </div>
                         <div className="adTexts">
                             <div className="adTextHeader">
-                                <h4 className='mH4 ls-1 tac'>Bringing you the <span className='mH4 ls-1 txtOrange'>best</span> audio gear</h4>
+                                <h4 className='mH4 ls-1 tac'>
+                                    {lang==='en' ? <>Bringing you the <span className='mH4 ls-1 txtOrange'>best</span> audio gear</> : <>Sizlere <span className='mH4 ls-1 txtOrange'>en iyi</span> ses ekipmanlarını sunuyoruz</>}
+                                </h4>
                             </div>
                             <div className="adTextP">
-                                <p className='mBody'>Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.</p>
+                                <p className='mBody'>
+                                {lang==='en' ? "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment." : "New York Şehri'nin kalbinde yer alan Audiophile, yüksek kaliteli kulaklıklar, kulak içi kulaklıklar, hoparlörler ve ses aksesuarları için önde gelen mağazadır. Geniş bir showroom ve lüks demo odaları ile ürünlerimizin geniş bir yelpazesini inceleyip deneyimleyebilirsiniz. Taşınabilir ses ekipmanlarınızı satın almak için Audiophile'ı en iyi yer yapan harika insanlarla tanışmak için mağazamıza uğrayın."}
+                                </p>
                             </div>
                         </div>
                     </div> : null
@@ -32,19 +39,19 @@ export default function Footer() {
                                 </svg>
                             </div>
                             <div className="footerLinks">
-                                <NavLink to={'/home'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>HOME</NavLink>
-                                <NavLink to={'/headphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>HEADPHONES</NavLink>
-                                <NavLink to={'/speakers'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>SPEAKERS</NavLink>
-                                <NavLink to={'/earphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>EARPHONES</NavLink>
+                                <NavLink to={'/home'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>{lang==='en' ?'HOME' : 'ANASAYFA'}</NavLink>
+                                <NavLink to={'/headphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>{lang==='en' ?'HEADPHONES' : 'KULAKLIK'}</NavLink>
+                                <NavLink to={'/speakers'} className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>{lang==='en' ?'SPEAKERS' : 'HOPARLÖR'}</NavLink>
+                                <NavLink to={'/earphones'}className='mSubTitle txtWhite ls-2' onClick={scrollToTop}>{lang==='en' ?'EARPHONES' : 'KABLOSUZ KULAKLIK'}</NavLink>
                             </div>
                             <div className="footerText">
                                 <p className='mBody txtWhite'>
-                                Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.
+                                {lang==='en' ? "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week." : "Audiophile, kişisel ses beklentilerinizi karşılamak için ihtiyaç duyduğunuz tek duraktır. Müzik severler ve ses uzmanlarından oluşan küçük bir ekibiz ve kişisel sesinizden en iyi şekilde yararlanmanıza yardımcı olmaya adanmışızdır. Demo tesisimizi ziyaret edin - haftanın 7 günü açığız."}
                                 </p>
                             </div>
                             <div className="footerCopyAndSocials">
                                 <div className="footerCopyright">
-                                    <p>Copyright 2021. All Rights Reserved</p>
+                                {lang==='en' ? <p>Copyright 2021. All Rights Reserved</p> : <p>2021 Tüm Hakları Saklıdır</p>}
                                 </div>
                                 <div className="footerSocials">
                                     <a href="#!"><img src={facebook} alt="" srcSet="" /></a>
@@ -70,7 +77,7 @@ export default function Footer() {
                                 </a>
                             </div>
                             <div className="footerCopyrightD">
-                                <p>Copyright 2021. All Rights Reserved</p>
+                                {lang==='en' ? <p>Copyright 2021. All Rights Reserved</p> : <p>2021 Tüm Hakları Saklıdır</p>}
                             </div>
                         </div>
                     </div>

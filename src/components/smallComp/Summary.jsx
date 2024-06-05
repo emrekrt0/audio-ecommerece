@@ -2,13 +2,14 @@ import React from 'react'
 import hs1 from '../../assets/cart/hs-1.png'
 import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import scrollToTop from './scrollToTop'
+import { langContext } from '../../App'
 
 export default function Summary() {
     const [modal, setModal] = useState(false)
-
+    const { lang } = useContext(langContext)
     function handleBackdropClick() {
         setModal(false);
     }
@@ -32,10 +33,10 @@ export default function Summary() {
                     <div className="modal-header-text">
                         <div className="modal-header-texts">
                             <div className="model-header-text-headline">
-                                <h1 className='modalH1'>THANK YOU</h1>
-                                <h1 className='modalH1'>FOR YOUR ORDER</h1>
+                                <h1 className='modalH1'>{lang==='en'?'THANK YOU':'SİPARİŞİNİZ İÇİN'}</h1>
+                                <h1 className='modalH1'>{lang==='en'?'FOR YOUR ORDER':'TEŞEKKÜRLER'}</h1>
                             </div>
-                            <p className='mBody tal'>You will receive an email confirmation shortly.</p>
+                            <p className='mBody tal'>{lang==='en'?'You will receive an email confirmation shortly.' : 'Kısa süre içerisinde bir doğrulama maili alacaksınız'}</p>
                         </div>
                     </div>
                     <div className="modal-body">
@@ -60,18 +61,18 @@ export default function Summary() {
                             <div className="modal-body-divider"></div>
                             <div className="modal-body-txt">
                                 <div className="modal-body-txt-content">
-                                    <p className='modalSub tac op50'>and 2 other item(s)</p>
+                                    <p className='modalSub tac op50'>{lang==='en'?'and 2 other item(s)': 've 2 adet ürün(ler)'}</p>
                                 </div>
                             </div>
                         </div>
                         <div className="modal-body-footer">
-                                <p className='mBody txtWhite tal'>GRAND TOTAL</p>
+                                <p className='mBody txtWhite tal'>{lang==='en'?'GRAND TOTAL':'GENEL TOPLAM'}</p>
                                 <h6 className='mH6 txtWhite'>$ 5,446</h6>
                         </div>
                     </div>
                     <div className="modal-footer">
                         <div className="modalBttn">
-                            <Link to={'/home'}  onClick={scrollToTop}><p class="mButton1 tac">BACK TO HOME</p></Link>
+                            <Link to={'/home'}  onClick={scrollToTop}><p class="mButton1 tac">{lang==='en'?'BACK TO HOME':'ANASAYFAYA DÖN'}</p></Link>
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@ export default function Summary() {
         <div className="summaryContainer">
             <div className="cartTop">
                 <div className="cartHeader">
-                    <h6 className='mH6'>SUMMARY</h6>
+                    <h6 className='mH6'>{lang==='en'?'SUMMARY' : 'ÖZET'}</h6>
                 </div>
             </div>
             <div className="cartProductsContainer">
@@ -149,24 +150,24 @@ export default function Summary() {
             <div className="sumFooterContainer">
                 <div className="sumFooterContent">
                     <div className="sumFooter">
-                        <p className='mBody'>TOTAL</p>
+                        <p className='mBody'>{lang==='en'?'TOTAL' : 'TOPLAM'}</p>
                         <h6 className='mH6'>$ 5,396</h6>
                     </div>
                     <div className="sumFooter">
-                        <p className='mBody'>SHIPPING</p>
+                        <p className='mBody'>{lang==='en'?'SHIPPING':'KARGO'}</p>
                         <h6 className='mH6'>$ 50</h6>
                     </div>
                     <div className="sumFooter mb24">
-                        <p className='mBody'>VAT (INCLUDED)</p>
+                        <p className='mBody'>{lang==='en'?'VAT (INCLUDED)' : 'VERGİ (DAHİL)'}</p>
                         <h6 className='mH6'>$ 1,079</h6>
                     </div>
                 </div>
                 <div className="sumFooter mb32">
-                    <p className='mBody'>GRAND TOTAL</p>
+                    <p className='mBody'>{lang==='en'?'GRAND TOTAL' : 'GENEL TOPLAM'}</p>
                     <h6 className='mH6 txtOrange'>$ 5,446</h6>
                 </div>
                 <div class="sumBttn">
-                    <p class="mButton1 tac" onClick={openModal}>CONTINUE & PAY</p>
+                    <p class="mButton1 tac" onClick={openModal}>{lang==='en'?'CONTINUE & PAY':'DEVAM ET & ÖDE'}</p>
                 </div>
             </div>
             

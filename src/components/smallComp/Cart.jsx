@@ -3,12 +3,13 @@ import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
 import { NavLink, useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import { hMenuContext, cartContext } from '../../App';
+import { hMenuContext, cartContext, langContext } from '../../App';
 import scrollToTop from './scrollToTop';
 
 export default function Cart() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
     const {cart, setCart} = useContext(cartContext)
+    const {lang} = useContext(langContext)
 
     function handleBackdropClick() {
         setCart(false)
@@ -25,10 +26,10 @@ export default function Cart() {
         <div className="cartContainer">
             <div className="cartTop">
                 <div className="cartHeader">
-                    <h6 className='mH6'>CART (3)</h6>
+                    <h6 className='mH6'>{lang==='en'?'CART (3)' : 'SEPET (3)'}</h6>
                 </div>
                 <div className="cartRmvBtn">
-                    <p className='mBody underline'>Remove All</p>
+                    <p className='mBody underline'>{lang==='en'? 'Remove All' : 'Hepsini Kaldır'}</p>
                 </div>
             </div>
             <div className="cartProductsContainer">
@@ -113,7 +114,7 @@ export default function Cart() {
                 <h6 className='mH6'>$ 5,396</h6>
             </div>
             <div className="cartCheckout">
-                <NavLink to={'/checkout'} onClick={scrollToTop}><h1 className='mButton1 tac' onClick={() => setCart(false) }>CHECKOUT</h1></NavLink>
+                <NavLink to={'/checkout'} onClick={scrollToTop}><h1 className='mButton1 tac' onClick={() => setCart(false) }>{lang==='en'? 'CHECKOUT' : 'ÖDEMEYE GİT'}</h1></NavLink>
             </div>
         </div>
        </>

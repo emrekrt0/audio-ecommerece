@@ -71,11 +71,11 @@ export default function Container() {
                                     <img src={bigSpeaker} alt="" />
                                 </div>
                                 <div className="bigSpeakerText">
-                                    <h5 className='bigSpeakerHeader'>ZX9 <br />SPEAKER</h5>
-                                    <p className='bigSpeakerSubHeader'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                                    <h5 className='bigSpeakerHeader'>ZX9 <br />{lang==='en'?'SPEAKER':'HOPARLÖR'}</h5>
+                                    <p className='bigSpeakerSubHeader'>{lang==='en'?'Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.' : 'Gerçekten dikkate değer bir ses sunmak için olağanüstü bir şekilde üretilmiş premium hoparlörlere yükseltin.'}</p>
                                     <Link to={'/details/zx-9-speaker-detail'} onClick={scrollToTop}>
                                         <div className="bigSpeakerButton tac">
-                                                <p className='mButton1 bg-black' >SEE PRODUCT</p>
+                                                <p className='mButton1 bg-black' >{lang==='en' ? 'SEE PRODUCT' : 'ÜRÜNÜ GÖR'}</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -88,11 +88,11 @@ export default function Container() {
                             <img src={zx7speaker} alt="" />
                         </div>
                         <div className="smallCardsTexts">
-                            <h4 className='mH4'>ZX7 SPEAKER</h4>
+                            <h4 className='mH4'>ZX7 {lang==='en'?'SPEAKER':'HOPARLÖR'}</h4>
                         </div>
                         <Link to={'/details/zx-7-speaker-detail'} onClick={scrollToTop}>
                         <div className="smallCardsButton">
-                            <p>SEE PRODUCT</p>
+                            <p>{lang==='en' ? 'SEE PRODUCT' : 'ÜRÜNÜ GÖR'}</p>
                         </div>
                         </Link>
                     </div>
@@ -101,10 +101,10 @@ export default function Container() {
                             <img src={yx1earphones} alt="" />
                         </div>
                         <div className="smallCardsTextsM">
-                            <h4 className='mH4'>YX1 EARPHONES</h4>
+                            <h4 className='mH4'>YX1 {lang==='en'?'EARPHONES':'KABLOSUZ KULAKLIK'}</h4>
                             <Link to={'/details/yx1-earphones-detail'} onClick={scrollToTop}>
                             <div className="smallCardsButtonM">
-                                <p>SEE PRODUCT</p>
+                                <p>{lang==='en' ? 'SEE PRODUCT' : 'ÜRÜNÜ GÖR'}</p>
                             </div>
                             </Link>
                         </div>
