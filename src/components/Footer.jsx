@@ -10,7 +10,7 @@ export default function Footer() {
         <footer>
                 {location.pathname !== '/checkout' ?  
                     <div className={`ad ${location.pathname !== '/checkout' ? '' : 'none'}`}>
-                        <div className="adImg">
+                        <div className="footerAdImg">
                             <img src={footerImg} alt="" srcSet="" />
                         </div>
                         <div className="adTexts">

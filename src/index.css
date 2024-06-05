@@ -341,10 +341,10 @@ footer {
   justify-items: center;
   width: 327px;
 }
-.adImg {
+.footerAdImg {
   margin-bottom: 40px;
 }
-.adImg>img {
+.footerAdImg>img {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -1409,7 +1409,7 @@ cursor: pointer;
     justify-content: space-between;
     align-items: center;
   }
-  .ad .adImg{
+  .ad .footerAdImg{
     grid-column: 2 / 3;
   }
   .ad .adTexts{
@@ -1417,7 +1417,7 @@ cursor: pointer;
     grid-column: 1 / 2;
     grid-row: 1;
   }
-  .adImg>img {
+  .footerAdImg>img {
     width: 540px;
     height: 588px;
   }
