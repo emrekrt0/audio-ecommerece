@@ -2,14 +2,19 @@ import hs1 from '../../assets/cart/hs-1.png'
 import hs2 from '../../assets/cart/hs-2.png'
 import hs3 from '../../assets/cart/hs-3.png'
 import { NavLink, useLocation } from 'react-router-dom';
-import { useContext } from 'react';
-import { hMenuContext, cartContext, langContext } from '../../App';
+import React, { useContext, useState, useEffect } from 'react';
+import { hMenuContext, cartContext, langContext, cartProductContext } from '../../App';
 import scrollToTop from './scrollToTop';
+import supabase from './Supabase';
+
 
 export default function Cart() {
     const {hamMenu, setHamMenu} = useContext(hMenuContext)
     const {cart, setCart} = useContext(cartContext)
     const {lang} = useContext(langContext)
+    const {cartProduct} = useContext(cartProductContext)
+    
+    console.log(cartProduct, 'cartProduct CART.JSX');
 
     function handleBackdropClick() {
         setCart(false)
@@ -32,6 +37,9 @@ export default function Cart() {
                     <p className='mBody underline'>{lang==='en'? 'Remove All' : 'Hepsini Kaldır'}</p>
                 </div>
             </div>
+            {cartProduct && cartProduct.map((product,index) => (
+                <div key={index}>{product.title}</div>
+            ))}
             <div className="cartProductsContainer">
                 <div className="cartProducts">
                     <div className="productInf">

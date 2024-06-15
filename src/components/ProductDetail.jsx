@@ -4,13 +4,15 @@ import FirstComp from "./smallComp/FirstComp";
 import YouMayAlsoLike from "./smallComp/YouMayAlsoLike";
 import {useNavigate} from 'react-router-dom';
 import supabase from "./smallComp/Supabase";
-import { langContext } from "../App";
+import { langContext, cartProductContext } from "../App";
 
 export default function ProductDetail() {
     const [product,setProduct] = useState();
     const navigate = useNavigate();
     const { slug } = useParams();
+    const {cartProduct, setCartProduct} = useContext(cartProductContext);
     const {lang} = useContext(langContext);
+    const [prdctQty, setPrdctQty] = useState(1);
 
     function handleGoBack() {
         navigate(-1);
@@ -21,6 +23,14 @@ export default function ProductDetail() {
         })
     }
 
+    function handleQty(action) {
+        if(action === '-' && prdctQty > 1){
+        setPrdctQty(prdctQty - 1);
+        }
+        else if(action === '+') {
+            setPrdctQty(prdctQty+ 1);
+        }
+    }
     useEffect(() => {
         getProductDetails();
     }, [slug]);
@@ -43,7 +53,35 @@ export default function ProductDetail() {
         }
     }
 
+    async function handleAddToCart(productId) {
+        console.log(productId, 'product detail');
+        try {
+            const {data , error} = await supabase
+            .from('products')
+            .select('*')
+            .eq('id', productId)
+            if(error) {
+                console.log(error);
+            }
+            else {
+                const currentCartProducts = cartProduct;
+                let updatedCartProducts = [...currentCartProducts];
+                if (prdctQty > 1) {
+                    for (let i = 0; i < prdctQty; i++) {
+                        updatedCartProducts.push(data)
+                    }
+                    setCartProduct(updatedCartProducts);
+                } else {
+                const updatedCartProducts = [...currentCartProducts, ...data];
+                setCartProduct(updatedCartProducts);
+                }
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
     console.log(product);
+    
     return (
         <>
             {product ? product.map((product, index) => (
@@ -80,16 +118,16 @@ export default function ProductDetail() {
                             
                                 <div className="productAddToCart">
                                     <div className="productQty w120h48 spcevenly">
-                                        <div className="qtyRmv pQtyNumb op25">
+                                        <div className="qtyRmv pQtyNumb op25" onClick={() => handleQty('-')}>
                                             -
                                         </div>
-                                        <h3 className='pQtyNumb'>1</h3>
-                                        <div className="qtyAdd pQtyNumb op25">
+                                        <h3 className='pQtyNumb'>{prdctQty}</h3>
+                                        <div className="qtyAdd pQtyNumb op25" onClick={() => handleQty('+')}>
                                             +
                                         </div>
                                     </div>
                                     <div className="productButton">
-                                        <p className="mButton1 w160h48 tac">
+                                        <p className="mButton1 w160h48 tac" onClick={() => handleAddToCart(product.id)}>
                                             {lang === 'en' ? 'ADD TO CART' : 'SEPETE EKLE'}
                                         </p>
                                     </div>
