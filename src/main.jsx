@@ -7,6 +7,8 @@ import Content from './components/Content.jsx'
 import Checkout from './components/Checkout.jsx'
 import ProductDetail from './components/ProductDetail.jsx'
 import Categories from './components/Categories.jsx'
+import Login from './components/Login.jsx'
+import Register from './components/Register.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,8 +30,16 @@ const router = createBrowserRouter([
       {
         path: '/categories/:category_link',
         element: <Categories />,
-      }
+      }      
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/register',
+    element: <Register />,
   }
 ])
 

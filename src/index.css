@@ -28,6 +28,11 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 a {text-decoration: none; color: inherit;}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
 
 .headerBackground {
   display: grid;
@@ -1716,6 +1721,32 @@ cursor: pointer;
 
   .langClsBtn{
     margin-inline: auto 30px;
+  }
+  .headerCartAndLogin{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+  .headerLogin>a button {
+    padding: 8px 25px;
+  }
+  .loginWrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #F1F1F1;
+  }
+  .loginContainer {
+    display: grid;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+  }
+  .loginContent {
+    padding: 32px 28px;
+    width: 350px;
+    height: 612px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
   }
 }
 @media (max-height: 800px ){
