@@ -11,25 +11,33 @@ import Cart from './smallComp/Cart';
 import scrollToTop from './smallComp/scrollToTop';
 import supabase from './smallComp/Supabase';
 
-export default function Header() {
+export default function Header(user) {
     const [catNames, setCatNames] = useState([])
+    const [userName, setUserName] = useState()
+    const [dropdown, setDropdown] = useState(false)
     const location = useLocation();
     const navigate = useNavigate();
     const {hamMenu ,setHamMenu} = useContext(hMenuContext);
     const {cart, setCart} = useContext(cartContext);
     const { lang } = useContext(langContext);
-    console.log(lang);
     
     useEffect(() => {
         getCategoryName();
     }, [])
+
+    useEffect(() => {
+        if (user && user.user && user.user.session && user.user.session.user && user.user.session.user.user_metadata) {
+            const getUserName = user.user.session.user.user_metadata.first_name;
+            setUserName(getUserName);
+        }
+    }, [user]);
 
     async function getCategoryName() {
         const {data, error} = await supabase
         .from('products')
         .select(`category_link,category`, {distinct: true})
         if (error) {
-            console.log(error)
+            alert(error)
         }
         else {
             setCatNames(data)
@@ -43,21 +51,26 @@ export default function Header() {
 
     function openNavbar() {
         setHamMenu(!hamMenu);
-        console.log(hamMenu, 'hamMenu');
     }
     function openCart() {
         setCart(!cart);
-        console.log(cart, 'cart');
     }   
 
-    console.log(catNames, 'catnames');
+    function handleDropDown() {
+        setDropdown(!dropdown)
+    }
+
+    async function handleLogOut() {
+        await supabase.auth.signOut()
+
+        window.location.reload()
+    }
 
     
 
    const uniqueCatLinks = Array.from(
     new Set(catNames.map(cat => JSON.stringify([cat.category_link, cat.category[lang]])))
     ).map(item => JSON.parse(item));
-    console.log(uniqueCatLinks, 'uniqueCatLinks');
     
     return (
         <>  
@@ -104,7 +117,12 @@ export default function Header() {
                                     </svg>
                             </div>
                             <div className="headerLogin">
+                                {userName !== undefined ? 
+                                <button className='mButton1 txtWhite ls-2' onClick={handleDropDown}>{userName}</button>
+                                : 
                                 <NavLink to={'/login'}><button className='mButton1 txtWhite ls-2'>{lang === 'en' ? 'LOGIN' : 'GİRİŞ YAP'}</button></NavLink>
+                                }
+                            {dropdown && <div className="dropdown"><button onClick={handleLogOut}>Çıkış Yap</button></div>}
                             </div>
                         </div>
                         </div>

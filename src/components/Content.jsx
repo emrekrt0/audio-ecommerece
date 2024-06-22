@@ -42,14 +42,13 @@ export default function Container() {
           console.error('Error fetching products:', error);
         }
       } catch (error) {
-        console.log('Error:', error);
+        alert('Error:', error);
       }
     }
     
     getProducts();
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []);
 
-  console.log(products);
     
     
     function MainPageContent() {

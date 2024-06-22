@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import { Outlet, useNavigate, useLocation } from 'react-router-dom'
 import Cart from './components/smallComp/Cart'
 import SelectLang from './components/smallComp/SelectLang'
+import supabase from './components/smallComp/Supabase'
 
 export const hMenuContext = createContext()
 export const cartContext = createContext()
@@ -17,11 +18,12 @@ function App() {
   const [lang, setLang] = useState(localStorage.getItem('lang') || 'en')
   const [hamMenu, setHamMenu] = useState(false)
   const [cart, setCart] = useState(false)
+  const [user, setUser] = useState()
+  const [userID, setUserID] = useState()
   
   const parsedCartProduct = JSON.parse(localStorage.getItem('cartProduct'))
   const [cartProduct, setCartProduct] = useState(parsedCartProduct || [])
 
-  console.log(cartProduct, 'app cart product');
 
   useEffect(() => {
     localStorage.setItem('lang', lang)
@@ -36,15 +38,26 @@ function App() {
    location.pathname === '/' ? navigate('/home') : null;
 }, [location, navigate]);
 
-console.log(localStorage.getItem('lang'));
-console.log(parsedCartProduct, 'app cart product local')
+useEffect(() => {
+  const fetchUser = async () => {
+  const { data, error } = await supabase.auth.getSession()
+    if (error) {
+      alert(error.message)
+    } else {
+      setUser(data)
+      setUserID(data.session.user.id)
+    }
+  }
+  fetchUser()
+}, [userID]);
+
   return (
     <>
       <langContext.Provider value={{lang, setLang}}> 
       <cartContext.Provider value={{cart, setCart}}>
       <cartProductContext.Provider value={{cartProduct, setCartProduct}}>
       <hMenuContext.Provider value={{hamMenu, setHamMenu}}>
-        <Header />
+        <Header user={user} />
         <Outlet />
         <SelectLang />
         <Footer />

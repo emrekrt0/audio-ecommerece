@@ -14,7 +14,6 @@ export default function Categories() {
         getCategories();
     }, [params.category_link, lang])
     
-    console.log(params);
     async function getCategories() {
         try {
         const {data, error} = await supabase
@@ -23,22 +22,20 @@ export default function Categories() {
         .order('id', {ascending: true})
         .ilike(`category_link`,`%${params.category_link}%`)
         if (error) {
-            console.log(error)
+            alert(error)
         }
         else {
             setCategory(data)
         }
         } catch(error) {
-            console.log(error)
+            alert(error)
         }
 
     }
-    console.log(category, 'category');
 
     let categoryNames = '';
     if(category) {
         categoryNames = category[0].category[lang];
-        console.log(categoryNames, 'categoryNames');
     }
 
     return(
